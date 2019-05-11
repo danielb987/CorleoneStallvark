@@ -1,16 +1,21 @@
 package gui;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+
 /**
  *
  * @author daniel
  */
-public class MainWindow extends javax.swing.JFrame {
+public final class MainWindow extends javax.swing.JFrame {
 
 	/**
 	 * Creates new form MainWindow
 	 */
 	public MainWindow() {
 		initComponents();
+		setExtendedState(getExtendedState() | JFrame.MAXIMIZED_BOTH);
 	}
 
 	/**

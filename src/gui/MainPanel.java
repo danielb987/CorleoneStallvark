@@ -3,7 +3,6 @@ package gui;
 import electric.Component;
 import electric.DrawingSettings;
 import electric.DrawingStyle;
-import electric.Line;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -17,7 +16,6 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.geom.AffineTransform;
-import java.awt.geom.Line2D;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
@@ -28,44 +26,30 @@ import javax.swing.JPanel;
 /**
  * Main panel
  */
-public class MainPanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener, Printable {
+public final class MainPanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener, Printable {
 	
-	double PAGE_WIDTH = 297;
-	double PAGE_HEIGHT = 210;
+	public static final double PAGE_WIDTH = 297;
+	public static final double PAGE_HEIGHT = 210;
 	
-	int STALLVERK_WIDTH = 270;
-	int STALLVERK_HEIGHT = 100;
+	public static final int STALLVERK_WIDTH = 270;
+	public static final int STALLVERK_HEIGHT = 100;
 	
-	double centerX = STALLVERK_WIDTH / 2d;
-	double centerY = STALLVERK_HEIGHT / 2d;
-	double scaleFactor = 1.0;
-//	double scaleFactor = 2.5;
+	private double centerX = STALLVERK_WIDTH / 2d;
+	private double centerY = STALLVERK_HEIGHT / 2d;
+//	private double scaleFactor = 1.0;
+	private double scaleFactor = 6;
 
 	private Graphics2D bufferGraphics;
 	private Image offscreenImage;
 	private Rectangle bounds;
 	
-	boolean leftMouseButtonDown = false;
-	int lastX = 0;
-	int lastY = 0;
+	private boolean leftMouseButtonDown = false;
+	private int lastX = 0;
+	private int lastY = 0;
 	
-	private final List<Component> components = new ArrayList<>();
+	private final Stallverk stallverk = new Stallverk();
 	
 	public MainPanel() {
-		components.add(new Line(0, 0, Component.SPACING, Component.SPACING));
-		components.add(new Line(0, Component.SPACING, Component.SPACING, 0));
-		
-		components.add(new Line(0d, 0, STALLVERK_WIDTH, 0));
-		components.add(new Line(0d, STALLVERK_HEIGHT, STALLVERK_WIDTH, STALLVERK_HEIGHT));
-		components.add(new Line(0d, 0, 0, STALLVERK_HEIGHT));
-		components.add(new Line(STALLVERK_WIDTH, 0d, STALLVERK_WIDTH, STALLVERK_HEIGHT));
-		
-		for (int i=0; i*Component.SPACING < STALLVERK_HEIGHT; i++)
-//		for (int i=0; i < 100; i++)
-			components.add(new Line(0, i, (int)(STALLVERK_WIDTH/Component.SPACING), i));
-		
-		for (int i=0; i*Component.SPACING < STALLVERK_WIDTH; i++)
-			components.add(new Line(i, 0, i, (int)(STALLVERK_HEIGHT/Component.SPACING)));
 		
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_SYMBOL, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CONNECTORS, true);
@@ -232,14 +216,6 @@ public class MainPanel extends JPanel implements MouseListener, MouseMotionListe
 			// Transformera till fönstret
 			graphics.translate(bounds.width/2, bounds.height/2);
 			
-//			double scale = 0.09;
-////			double scale = 0.18;	// Hela banan
-			
-//			if (ONLY_SINGLE_SWITCH)
-//				scale = 3.0;		// En växel
-			
-//			scale = 1.0;		// Test
-			
 			graphics.scale(scaleFactor, scaleFactor);
 //			graphics.scale(scale, scale);
 			
@@ -252,14 +228,9 @@ public class MainPanel extends JPanel implements MouseListener, MouseMotionListe
 		
 		graphics.setColor(Color.black);
 		
-		for (Component component : components) {
-			component.draw(graphics);
-		}
-		
-		graphics.draw(new Line2D.Double(0,0,100,300));
+		stallverk.draw(graphics);
 		
 		graphics.setTransform(oldXForm); // Restore transform
-		graphics.draw(new Line2D.Double(0,0,100,200));
 	}
 	
 	
@@ -297,7 +268,6 @@ public class MainPanel extends JPanel implements MouseListener, MouseMotionListe
 		bufferGraphics.drawString(str, 2, 10);
 		
 		g.drawImage(offscreenImage, 0, 0, this);
-		((Graphics2D)g).draw(new Line2D.Double(0,0,100,100));
 	}
 
 }
