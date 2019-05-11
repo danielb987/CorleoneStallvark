@@ -10,11 +10,11 @@ import java.util.List;
 /**
  * Ställverket
  */
-public final class Stallverk {
+public final class SwitchBoard {
 
 	private final List<Component> components = new ArrayList<>();
 	
-	public Stallverk() {
+	public SwitchBoard() {
 		create();
 	}
 	

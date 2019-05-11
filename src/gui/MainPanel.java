@@ -47,7 +47,7 @@ public final class MainPanel extends JPanel implements MouseListener, MouseMotio
 	private int lastX = 0;
 	private int lastY = 0;
 	
-	private final Stallverk stallverk = new Stallverk();
+	private final SwitchBoard switchBoard = new SwitchBoard();
 	
 	public MainPanel() {
 		
@@ -228,7 +228,7 @@ public final class MainPanel extends JPanel implements MouseListener, MouseMotio
 		
 		graphics.setColor(Color.black);
 		
-		stallverk.draw(graphics);
+		switchBoard.draw(graphics);
 		
 		graphics.setTransform(oldXForm); // Restore transform
 	}
