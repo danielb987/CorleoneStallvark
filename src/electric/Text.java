@@ -10,7 +10,7 @@ public class Text extends Component {
 
 	protected Label _label;
 	
-	public Text(int column, int row, Orientation orientation, Label label) {
+	public Text(double column, double row, Orientation orientation, Label label) {
 		super(column, row, orientation);
 		_label = label;
 	}
