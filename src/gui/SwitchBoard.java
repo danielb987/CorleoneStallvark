@@ -42,23 +42,30 @@ public final class SwitchBoard {
 			components.add(new Line(i, 0, i, (int)(MainPanel.STALLVERK_HEIGHT/Component.SPACING), thickness, Color.LIGHT_GRAY));
 		
 		// Draw board outline
-		components.add(new Line(0, 0, 106, 0, thickness*2, Color.BLACK));
-		components.add(new Line(0, 0, 0, 47, thickness*2, Color.BLACK));
-		components.add(new Line(0, 47, 106, 47, thickness*2, Color.BLACK));
-		components.add(new Line(106, 0, 106, 47, thickness*2, Color.BLACK));
+		components.add(new Line(0, 0, 89, 0, thickness*2, Color.BLACK));
+		components.add(new Line(0, 0, 0, 39, thickness*2, Color.BLACK));
+		components.add(new Line(0, 39, 89, 39, thickness*2, Color.BLACK));
+		components.add(new Line(89, 0, 89, 39, thickness*2, Color.BLACK));
 	}
 	
 	public void createLayout() {
-		int CY = 19;	// Y position of main track
+//		int CY = 19;	// Y position of main track
+		int CY = 14;	// Y position of main track
 		int DIST = 3;	// Y distance between tracks
 		int t;
 		
 		// Main track
-		components.add(new Line(0, CY, 106, CY, 1, Color.BLACK));
+//		components.add(new Line(0, CY, 106, CY, 1, Color.BLACK));
+		components.add(new Line(0, CY, 89, CY, 1, Color.BLACK));
+		
+		// Vertical Main track
+		components.add(new Line(85, 0, 85, 39, 1, Color.BLACK));
 		
 		// Main track on freight yard
-		components.add(new Line(4, CY+4, 106, CY+4, 0.8, Color.BLACK));
+		components.add(new Line(4, CY+4, 77, CY+4, 0.8, Color.BLACK));
 		components.add(new Line(0, CY+8, 4, CY+4, 0.8, Color.BLACK));
+		components.add(new Line(77, CY+4, 81, CY+8, 0.8, Color.BLACK));
+		components.add(new Line(81, CY+8, 81, 39, 0.8, Color.BLACK));
 		
 		// Crossover at the left
 		components.add(new Line(4, CY, 8, CY + 4, 3/2f, 0, 0.5, Color.BLACK));
@@ -73,6 +80,38 @@ public final class SwitchBoard {
 		components.add(new SingleLED(23, CY+2, EAST, new Label("D5",0,-2)));
 		components.add(new SingleLED(24, CY+4, EAST, new Label("D6",0,-2)));
 		components.add(new Button(25, CY, EAST, new Label("S2",0,-2)));
+		
+		// Crossover little left to the right
+		components.add(new Line(67, CY, 63, CY + 4, 3/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(64, CY, EAST, new Label("D201",0,-2)));
+		components.add(new SingleLED(65, CY+2, EAST, new Label("D202",0,-2)));
+		components.add(new SingleLED(66, CY+4, EAST, new Label("D203",0,-2)));
+//		components.add(new Button(25, CY, EAST, new Label("S2+",0,-2)));
+		components.add(new Button(67, CY, EAST, new Label("S201",0,-2)));
+		
+		// Crossover at the right
+		components.add(new Line(71, CY, 75, CY + 4, 3/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(74, CY, EAST, new Label("D204",0,-2)));
+		components.add(new SingleLED(73, CY+2, EAST, new Label("D205",0,-2)));
+		components.add(new SingleLED(72, CY+4, EAST, new Label("D206",0,-2)));
+//		components.add(new Button(4, CY, EAST, new Label("S1+",0,-2)));
+		components.add(new Button(71, CY, EAST, new Label("S202",0,-2)));
+		
+		// Crossover vertical 1
+		components.add(new Line(81, CY+9, 85, CY+13, 0, 3/2f, 0.5, Color.BLACK));
+		components.add(new SingleLED(85, CY+10, NORTH, new Label("D207",3,0)));
+		components.add(new SingleLED(83, CY+11, NORTH, new Label("D208",0,-3)));
+		components.add(new SingleLED(81, CY+12, NORTH, new Label("D209",-3,0)));
+//		components.add(new Button(4, CY, EAST, new Label("S1+",0,-2)));
+		components.add(new Button(85, CY+13, NORTH, new Label("S203",3,0)));
+		
+		// Crossover vertical 2
+		components.add(new Line(85, CY+17, 81, CY+21, 0, 3/2f, 0.5, Color.BLACK));
+		components.add(new SingleLED(85, CY+20, NORTH, new Label("D210",3,0)));
+		components.add(new SingleLED(83, CY+19, NORTH, new Label("D211",0,-3)));
+		components.add(new SingleLED(81, CY+18, NORTH, new Label("D212",-3,0)));
+//		components.add(new Button(4, CY, EAST, new Label("S1+",0,-2)));
+		components.add(new Button(85, CY+17, NORTH, new Label("S204",3,0)));
 		
 		// Siding for storage of passenger cars
 		components.add(new Line(10, CY, 13, CY - 3, SPACING/2f, 0, 0.5, Color.BLACK));
