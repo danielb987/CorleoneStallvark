@@ -32,7 +32,7 @@ public final class MainPanel extends JPanel implements MouseListener, MouseMotio
 	public static final double PAGE_HEIGHT = 210;
 	
 	public static final int STALLVERK_WIDTH = 270;
-	public static final int STALLVERK_HEIGHT = 100;
+	public static final int STALLVERK_HEIGHT = 120;
 	
 	private double centerX = STALLVERK_WIDTH / 2d;
 	private double centerY = STALLVERK_HEIGHT / 2d;
@@ -51,6 +51,7 @@ public final class MainPanel extends JPanel implements MouseListener, MouseMotio
 	
 	public MainPanel() {
 		
+		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CENTER, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_SYMBOL, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CONNECTORS, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_OUTLINE, true);

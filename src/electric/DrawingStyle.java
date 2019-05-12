@@ -9,5 +9,6 @@ public enum DrawingStyle {
 	PRINT_CONNECTORS,
 	PRINT_OUTLINE,
 	PRINT_IDENTIFIER,
+	PRINT_CENTER,
 	
 }
