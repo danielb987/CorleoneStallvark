@@ -8,8 +8,6 @@ import electric.Line;
 import electric.Orientation;
 import static electric.Orientation.EAST;
 import static electric.Orientation.NORTH;
-import static electric.Orientation.SOUTH;
-import static electric.Orientation.WEST;
 import electric.SingleLED;
 import electric.Text;
 import java.awt.Color;
@@ -27,7 +25,6 @@ public final class SwitchBoard {
 	public SwitchBoard() {
 		createBoard();
 		createLayout();
-		createComponents();
 	}
 	
 	public void createBoard() {
@@ -246,14 +243,6 @@ public final class SwitchBoard {
 		components.add(new SingleLED(21, CY + 12 + 2, EAST, new Label("D108",0,-2)));
 		components.add(new Button(23, CY + 12, EAST, new Label("S104",0,-2)));
 		components.add(new Text(17, CY+15, Orientation.EAST, new Label("17",0,0,5,true)));
-	}
-	
-	
-	public void createComponents() {
-		components.add(new Button(2,4,EAST, new Label("Sa",0,-2)));
-		components.add(new Button(12,4,NORTH, new Label("Sb",0,-2)));
-		components.add(new Button(22,4,WEST, new Label("Sc",0,-2)));
-		components.add(new Button(32,4,SOUTH, new Label("Sd",0,-2)));
 	}
 	
 	
