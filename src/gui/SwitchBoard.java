@@ -196,9 +196,9 @@ public final class SwitchBoard {
 		
 		components.add(new Text(48, CY, Orientation.EAST, new Label("4",0,0,4,true)));
 		components.add(new Text(48, CY+4, Orientation.EAST, new Label("5",0,0,4,true)));
-		components.add(new Text(48, CY+8, Orientation.EAST, new Label("6",0,0,4,true)));
-		components.add(new Text(48, CY+12, Orientation.EAST, new Label("7",0,0,4,true)));
-		components.add(new Text(48, CY+15, Orientation.EAST, new Label("8",0,0,4,true)));
+//		components.add(new Text(48, CY+8, Orientation.EAST, new Label("6",0,0,4,true)));
+//		components.add(new Text(48, CY+12, Orientation.EAST, new Label("7",0,0,4,true)));
+//		components.add(new Text(48, CY+15, Orientation.EAST, new Label("8",0,0,4,true)));
 /*		
 		// Passenger track 2
 		components.add(new Line(40, CY-4, 44, CY - 8, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -248,6 +248,44 @@ public final class SwitchBoard {
 		// Turntable
 		components.add(new Circle(10, CY+13.5, 3.7, 0.5, Color.GRAY));
 		components.add(new Line(7, CY + 16, 12, CY + 11, SPACING/2f, 0, 0.5, Color.BLACK));
+		
+		
+		// Siding 6 for freight wagons
+		components.add(new Line(35, CY + 4, 39, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(39, CY + 8, 57, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(38, CY + 4, EAST, new Label("D51",0,-2)));
+		components.add(new SingleLED(37, CY + 4 + 2, EAST, new Label("D52",0,-2)));
+		components.add(new Button(35, CY + 4, EAST, new Label("S51",0,-2)));
+		components.add(new Line(61, CY + 4, 57, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(58, CY + 4, EAST, new Label("D53",0,-2)));
+		components.add(new SingleLED(59, CY + 4 + 2, EAST, new Label("D54",0,-2)));
+		components.add(new Button(61, CY + 4, EAST, new Label("S52",0,-2)));
+		components.add(new Text(48, CY+8, Orientation.EAST, new Label("6",0,0,4,true)));
+		
+		// Siding 7 for freight wagons
+		components.add(new Line(39, CY + 8, 43, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(43, CY + 12, 53, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(42, CY + 8, EAST, new Label("D55",0,-2)));
+		components.add(new SingleLED(41, CY + 8 + 2, EAST, new Label("D56",0,-2)));
+		components.add(new Button(39, CY + 8, EAST, new Label("S53",0,-2)));
+		components.add(new Line(57, CY + 8, 53, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(54, CY + 8, EAST, new Label("D57",0,-2)));
+		components.add(new SingleLED(55, CY + 8 + 2, EAST, new Label("D58",0,-2)));
+		components.add(new Button(57, CY + 8, EAST, new Label("S54",0,-2)));
+		components.add(new Text(48, CY+12, Orientation.EAST, new Label("7",0,0,4,true)));
+		
+		// Siding 8 for freight wagons
+		components.add(new Line(43, CY + 12, 46, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(46, CY + 15, 50, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(46, CY + 12, EAST, new Label("D59",0,-2)));
+		components.add(new SingleLED(45, CY + 12 + 2, EAST, new Label("D60",0,-2)));
+		components.add(new Button(43, CY + 12, EAST, new Label("S55",0,-2)));
+		components.add(new Line(53, CY + 12, 50, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(50, CY + 12, EAST, new Label("D61",0,-2)));
+		components.add(new SingleLED(51, CY + 12 + 2, EAST, new Label("D62",0,-2)));
+		components.add(new Button(53, CY + 12, EAST, new Label("S56",0,-2)));
+		components.add(new Text(48, CY+15, Orientation.EAST, new Label("8",0,0,4,true)));
+		
 	}
 	
 	
