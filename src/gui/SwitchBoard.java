@@ -92,10 +92,28 @@ public final class SwitchBoard {
 		
 		// Siding to the right from the above siding
 		components.add(new Line(24, CY - DIST, 24 + DIST, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(27, CY - DIST*2, 34, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(27, CY - DIST*2, 40, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new SingleLED(27, CY - DIST, EAST, new Label("D13",0,-2)));
 		components.add(new SingleLED(26, CY - DIST - 2, EAST, new Label("D14",0,-2)));
 		components.add(new Button(24, CY - DIST, EAST, new Label("S6",0,-2)));
+		
+		// Siding to the right from the above siding
+		components.add(new Line(29, CY - DIST*2, 29 + DIST, CY - DIST*3, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(32, CY - DIST*3, 40, CY - DIST*3, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(32, CY - DIST*2, EAST, new Label("D15",0,-2)));
+		components.add(new SingleLED(31, CY - DIST*2 - 2, EAST, new Label("D16",0,-2)));
+		components.add(new Button(29, CY - DIST*2, EAST, new Label("S7",0,-2)));
+		
+		
+		
+		
+		
+		// Siding for cabooses
+		components.add(new Line(17, CY + DIST, 17 + DIST, CY + DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(20, CY + DIST*2, 34, CY + DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(20, CY + DIST, EAST, new Label("D101",0,-2)));
+		components.add(new SingleLED(19, CY + DIST + 2, EAST, new Label("D102",0,-2)));
+		components.add(new Button(17, CY + DIST, EAST, new Label("S101",0,-2)));
 	}
 	
 	public void createComponents() {
