@@ -3,6 +3,7 @@ package gui;
 import electric.Button;
 import electric.Component;
 import static electric.Component.SPACING;
+import electric.Label;
 import electric.Line;
 import static electric.Orientation.EAST;
 import static electric.Orientation.NORTH;
@@ -59,49 +60,49 @@ public final class SwitchBoard {
 		
 		// Crossover at the left
 		components.add(new Line(6, CY, 6 + DIST, CY + DIST, DIST/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(9, CY, EAST));
-		components.add(new SingleLED(8, CY+1, NORTH));
-		components.add(new SingleLED(6, CY+DIST, EAST));
-		components.add(new Button(5, CY, EAST));
+		components.add(new SingleLED(9, CY, EAST, new Label("D1",0,-2)));
+		components.add(new SingleLED(8, CY+1, NORTH, new Label("D2",0,-2)));
+		components.add(new SingleLED(6, CY+DIST, EAST, new Label("D3",0,-2)));
+		components.add(new Button(5, CY, EAST, new Label("S1",0,-2)));
 		
 		// Crossover little right
 		components.add(new Line(25, CY, 25 - DIST, CY + DIST, DIST/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(22, CY, EAST));
-		components.add(new SingleLED(24, CY+1, NORTH));
-		components.add(new SingleLED(25, CY+DIST, EAST));
-		components.add(new Button(26, CY, EAST));
+		components.add(new SingleLED(22, CY, EAST, new Label("D4",0,-2)));
+		components.add(new SingleLED(24, CY+1, NORTH, new Label("D5",0,-2)));
+		components.add(new SingleLED(25, CY+DIST, EAST, new Label("D6",0,-2)));
+		components.add(new Button(26, CY, EAST, new Label("S2",0,-2)));
 		
 		// Siding for storage of passenger cars
 		components.add(new Line(12, CY, 12 + DIST, CY - DIST, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new Line(15, CY - DIST, 29, CY - DIST, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(15, CY, EAST));
-		components.add(new SingleLED(14, CY-2, EAST));
-		components.add(new Button(12, CY, EAST));
+		components.add(new SingleLED(15, CY, EAST, new Label("D7",0,-2)));
+		components.add(new SingleLED(14, CY-2, EAST, new Label("D8",0,-2)));
+		components.add(new Button(12, CY, EAST, new Label("S3",0,-2)));
 		components.add(new Line(29, CY - DIST, 29 + DIST, CY, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(29, CY, EAST));
-		components.add(new SingleLED(30, CY-2, EAST));
-		components.add(new Button(32, CY, EAST));
+		components.add(new SingleLED(29, CY, EAST, new Label("D9",0,-2)));
+		components.add(new SingleLED(30, CY-2, EAST, new Label("D10",0,-2)));
+		components.add(new Button(32, CY, EAST, new Label("S4",0,-2)));
 		
 		// Siding to the left from the above siding
 		components.add(new Line(20, CY - DIST, 20 - DIST, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new Line(17, CY - DIST*2, 10, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(17, CY - DIST, EAST));
-		components.add(new SingleLED(18, CY - DIST - 2, EAST));
-		components.add(new Button(20, CY - DIST, EAST));
+		components.add(new SingleLED(17, CY - DIST, EAST, new Label("D11",0,-2)));
+		components.add(new SingleLED(18, CY - DIST - 2, EAST, new Label("D12",0,-2)));
+		components.add(new Button(20, CY - DIST, EAST, new Label("S5",0,-2)));
 		
 		// Siding to the right from the above siding
 		components.add(new Line(24, CY - DIST, 24 + DIST, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new Line(27, CY - DIST*2, 34, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(27, CY - DIST, EAST));
-		components.add(new SingleLED(26, CY - DIST - 2, EAST));
-		components.add(new Button(24, CY - DIST, EAST));
+		components.add(new SingleLED(27, CY - DIST, EAST, new Label("D13",0,-2)));
+		components.add(new SingleLED(26, CY - DIST - 2, EAST, new Label("D14",0,-2)));
+		components.add(new Button(24, CY - DIST, EAST, new Label("S6",0,-2)));
 	}
 	
 	public void createComponents() {
-		components.add(new Button(2,4,EAST));
-		components.add(new Button(12,4,NORTH));
-		components.add(new Button(22,4,WEST));
-		components.add(new Button(32,4,SOUTH));
+		components.add(new Button(2,4,EAST, new Label("S7",0,-2)));
+		components.add(new Button(12,4,NORTH, new Label("S8",0,-2)));
+		components.add(new Button(22,4,WEST, new Label("S9",0,-2)));
+		components.add(new Button(32,4,SOUTH, new Label("S10",0,-2)));
 	}
 	
 	public void draw(Graphics2D graphics)

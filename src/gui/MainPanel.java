@@ -48,11 +48,11 @@ public final class MainPanel extends JPanel implements MouseListener, MouseMotio
 	
 	public MainPanel() {
 		
-//		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CENTER, true);
+		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CENTER, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_SYMBOL, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CONNECTORS, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_OUTLINE, true);
-		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_IDENTIFIER, true);
+		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_LABEL, true);
 		
 		addMouseListener(this);
 		addMouseMotionListener(this);

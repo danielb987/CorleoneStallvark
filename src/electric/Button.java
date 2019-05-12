@@ -9,12 +9,15 @@ import java.awt.geom.Ellipse2D;
  */
 public class Button extends Component {
 
-	public Button(double x, double y, Orientation orientation) {
-		super(x, y, orientation);
-	}
+	protected Label _label;
 	
-	public Button(int column, int row, Orientation orientation) {
+//	public Button(double x, double y, Orientation orientation, Label label) {
+//		super(x, y, orientation);
+//	}
+	
+	public Button(int column, int row, Orientation orientation, Label label) {
 		super(column, row, orientation);
+		_label = label;
 	}
 	
 	@Override
@@ -37,7 +40,8 @@ public class Button extends Component {
 					case PRINT_OUTLINE:
 						break;
 						
-					case PRINT_IDENTIFIER:
+					case PRINT_LABEL:
+						printLabel(graphics);
 						break;
 						
 					default:
@@ -51,6 +55,35 @@ public class Button extends Component {
 		graphics.setColor(Color.GREEN);
 		
 		graphics.fill(new Ellipse2D.Double(_x - 1f/2, _y - 1f/2, 1, 1));
+	}
+	
+	private void printLabel(Graphics2D graphics) {
+		final double SPC = Component.SPACING;
+		graphics.setColor(Color.BLUE);
+//		graphics.setColor(Color.BLACK);
+		
+		switch (_orientation) {
+			case HORIZONTAL:
+			case EAST:
+				_label.draw(graphics, _x + SPC/2, _y);
+				break;
+				
+			case VERTICAL:
+			case NORTH:
+				_label.draw(graphics, _x, _y + SPC/2);
+				break;
+				
+			case WEST:
+				_label.draw(graphics, _x - SPC/2, _y);
+				break;
+				
+			case SOUTH:
+				_label.draw(graphics, _x, _y - SPC/2);
+				break;
+				
+			default:
+				throw new UnsupportedOperationException();
+		}
 	}
 	
 	private void printSymbol(Graphics2D graphics) {

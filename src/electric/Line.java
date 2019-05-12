@@ -75,15 +75,10 @@ public class Line extends Component {
 						break;
 						
 					case PRINT_CONNECTORS:
-						break;
-						
 					case PRINT_OUTLINE:
-						break;
-						
-					case PRINT_IDENTIFIER:
-						break;
-						
+					case PRINT_LABEL:
 					case PRINT_CENTER:
+						// Do nothing
 						break;
 						
 					default:
