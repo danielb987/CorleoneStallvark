@@ -120,7 +120,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(28, CY, EAST, new Label("D9",0,-2)));
 		components.add(new SingleLED(29, CY-2, EAST, new Label("D10",0,-2)));
 		components.add(new Button(31, CY, EAST, new Label("S4",0,-2)));
-		components.add(new Text(20.5, CY-3, Orientation.EAST, new Label("11",0,0,5,true)));
+		components.add(new Text(20.5, CY-3, Orientation.EAST, new Label("11",0,0,4,true)));
 		
 		// Siding to the left from the above siding
 		components.add(new Line(18, CY - 3, 15, CY - 6, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -128,7 +128,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(15, CY - 3, EAST, new Label("D11",0,-2)));
 		components.add(new SingleLED(16, CY - 3 - 2, EAST, new Label("D12",0,-2)));
 		components.add(new Button(18, CY - 3, EAST, new Label("S5",0,-2)));
-		components.add(new Text(11.5, CY-6, Orientation.EAST, new Label("12",0,0,5,true)));
+		components.add(new Text(11.5, CY-6, Orientation.EAST, new Label("12",0,0,4,true)));
 		
 		// Siding to the right from the above siding
 		components.add(new Line(23, CY - 3, 27, CY - 7, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -136,7 +136,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(26, CY - 3, EAST, new Label("D13",0,-2)));
 		components.add(new SingleLED(25, CY - 3 - 2, EAST, new Label("D14",0,-2)));
 		components.add(new Button(23, CY - 3, EAST, new Label("S6",0,-2)));
-		components.add(new Text(34, CY-7, Orientation.EAST, new Label("13",0,0,5,true)));
+		components.add(new Text(34, CY-7, Orientation.EAST, new Label("13",0,0,4,true)));
 		
 		// Siding to the right from the above siding
 		components.add(new Line(27, CY - 7, 27 + 3, CY - 10, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -144,7 +144,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(30, CY - 7, EAST, new Label("D15",0,-2)));
 		components.add(new SingleLED(29, CY - 7 - 2, EAST, new Label("D16",0,-2)));
 		components.add(new Button(27, CY - 7, EAST, new Label("S7",0,-2)));
-		components.add(new Text(34, CY-10, Orientation.EAST, new Label("14",0,0,5,true)));
+		components.add(new Text(34, CY-10, Orientation.EAST, new Label("14",0,0,4,true)));
 		
 		
 		
@@ -159,7 +159,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(58, CY, EAST, new Label("D25",0,-2)));
 		components.add(new SingleLED(59, CY-2, EAST, new Label("D26",0,-2)));
 		components.add(new Button(61, CY, EAST, new Label("S12",0,-2)));
-		components.add(new Text(48, CY-4, Orientation.EAST, new Label("3",0,0,5,true)));
+		components.add(new Text(48, CY-4, Orientation.EAST, new Label("3",0,0,4,true)));
 		
 		// Passenger track 2
 		components.add(new Line(35, CY, 43, CY - 8, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -168,7 +168,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(37, CY-2, EAST, new Label("D18",0,-2)));
 		components.add(new Button(35, CY, EAST, new Label("S8",0,-2)));
 		components.add(new Line(53, CY - 8, 57, CY - 4, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Text(48, CY-8, Orientation.EAST, new Label("2",0,0,5,true)));
+		components.add(new Text(48, CY-8, Orientation.EAST, new Label("2",0,0,4,true)));
 		
 		// Engine storage track
 		components.add(new SingleLED(56, CY-8, EAST, new Label("D27",0,-2)));
@@ -179,7 +179,7 @@ public final class SwitchBoard {
 //		components.add(new SingleLED(29+1+20, CY, EAST, new Label("D19",0,-2)));
 //		components.add(new SingleLED(30+1+20, CY-2, EAST, new Label("D20",0,-2)));
 //		components.add(new Button(32+1+20, CY, EAST, new Label("S9",0,-2)));
-//		components.add(new Text(49, CY-8, Orientation.EAST, new Label("2",0,0,5,true)));
+//		components.add(new Text(49, CY-8, Orientation.EAST, new Label("2",0,0,4,true)));
 		
 		// Passenger track 1
 		components.add(new Line(43, CY-8, 46, CY - 11, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -191,13 +191,13 @@ public final class SwitchBoard {
 		components.add(new SingleLED(50, CY-8, EAST, new Label("D21",0,-2)));
 		components.add(new SingleLED(51, CY-8-2, EAST, new Label("D22",0,-2)));
 		components.add(new Button(53, CY-8, EAST, new Label("S10",0,-2)));
-		components.add(new Text(48, CY-11, Orientation.EAST, new Label("1",0,0,5,true)));
+		components.add(new Text(48, CY-11, Orientation.EAST, new Label("1",0,0,4,true)));
 		
-		components.add(new Text(48, CY, Orientation.EAST, new Label("4",0,0,5,true)));
-		components.add(new Text(48, CY+4, Orientation.EAST, new Label("5",0,0,5,true)));
-		components.add(new Text(48, CY+8, Orientation.EAST, new Label("6",0,0,5,true)));
-		components.add(new Text(48, CY+12, Orientation.EAST, new Label("7",0,0,5,true)));
-		components.add(new Text(48, CY+15, Orientation.EAST, new Label("8",0,0,5,true)));
+		components.add(new Text(48, CY, Orientation.EAST, new Label("4",0,0,4,true)));
+		components.add(new Text(48, CY+4, Orientation.EAST, new Label("5",0,0,4,true)));
+		components.add(new Text(48, CY+8, Orientation.EAST, new Label("6",0,0,4,true)));
+		components.add(new Text(48, CY+12, Orientation.EAST, new Label("7",0,0,4,true)));
+		components.add(new Text(48, CY+15, Orientation.EAST, new Label("8",0,0,4,true)));
 /*		
 		// Passenger track 2
 		components.add(new Line(40, CY-4, 44, CY - 8, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -226,7 +226,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(28, CY + 4, EAST, new Label("D103",0,-2)));
 		components.add(new SingleLED(29, CY + 4 + 2, EAST, new Label("D104",0,-2)));
 		components.add(new Button(31, CY + 4, EAST, new Label("S102",0,-2)));
-		components.add(new Text(21, CY+8, Orientation.EAST, new Label("15",0,0,5,true)));
+		components.add(new Text(21, CY+8, Orientation.EAST, new Label("15",0,0,4,true)));
 		
 		// Siding for engines
 		components.add(new Line(27, CY + 8, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -234,7 +234,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(24, CY + 8, EAST, new Label("D105",0,-2)));
 		components.add(new SingleLED(25, CY + 8 + 2, EAST, new Label("D106",0,-2)));
 		components.add(new Button(27, CY + 8, EAST, new Label("S103",0,-2)));
-		components.add(new Text(17, CY+12, Orientation.EAST, new Label("16",0,0,5,true)));
+		components.add(new Text(17, CY+12, Orientation.EAST, new Label("16",0,0,4,true)));
 		
 		// Siding for engines
 		components.add(new Line(23, CY + 12, 20, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -242,7 +242,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(20, CY + 12, EAST, new Label("D107",0,-2)));
 		components.add(new SingleLED(21, CY + 12 + 2, EAST, new Label("D108",0,-2)));
 		components.add(new Button(23, CY + 12, EAST, new Label("S104",0,-2)));
-		components.add(new Text(17, CY+15, Orientation.EAST, new Label("17",0,0,5,true)));
+		components.add(new Text(17, CY+15, Orientation.EAST, new Label("17",0,0,4,true)));
 	}
 	
 	
