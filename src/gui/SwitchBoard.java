@@ -164,7 +164,7 @@ public final class SwitchBoard {
 		
 		// Passenger track 2
 		components.add(new Line(35, CY, 43, CY - 8, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(43, CY - 8, 61, CY - 8, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(43, CY - 8, 63, CY - 8, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new SingleLED(38, CY, EAST, new Label("D17",0,-2)));
 		components.add(new SingleLED(37, CY-2, EAST, new Label("D18",0,-2)));
 		components.add(new Button(35, CY, EAST, new Label("S8",0,-2)));
@@ -176,6 +176,7 @@ public final class SwitchBoard {
 		components.add(new SingleLED(55, CY-8+2, EAST, new Label("D28",0,-2)));
 		components.add(new SingleLED(54, CY-4, EAST, new Label("D29",0,-2)));
 		components.add(new Button(57, CY-4, EAST, new Label("S13",0,-2)));
+		components.add(new Text(60, CY-8, Orientation.EAST, new Label("21",0,0,4,true)));
 		
 //		components.add(new SingleLED(29+1+20, CY, EAST, new Label("D19",0,-2)));
 //		components.add(new SingleLED(30+1+20, CY-2, EAST, new Label("D20",0,-2)));

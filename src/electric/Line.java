@@ -84,6 +84,7 @@ public class Line extends Component {
 					case PRINT_CONNECTORS:
 					case PRINT_OUTLINE:
 					case PRINT_LABEL:
+					case PRINT_TEXT:
 						// Do nothing
 						break;
 						

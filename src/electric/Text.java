@@ -20,7 +20,7 @@ public class Text extends Component {
 		for (DrawingStyle drawingStyle : DrawingStyle.values()) {
 			if (DrawingSettings.isDrawingStyleEnabled(drawingStyle)) {
 				switch (drawingStyle) {
-					case PRINT_LABEL:
+					case PRINT_TEXT:
 						printLabel(graphics);
 						break;
 						
@@ -28,6 +28,7 @@ public class Text extends Component {
 					case PRINT_SYMBOL:
 					case PRINT_CONNECTORS:
 					case PRINT_OUTLINE:
+					case PRINT_LABEL:
 						// Do nothing
 						break;
 						

@@ -10,5 +10,6 @@ public enum DrawingStyle {
 	PRINT_SYMBOL,
 	PRINT_CENTER,
 	PRINT_LABEL,
+	PRINT_TEXT,
 	
 }

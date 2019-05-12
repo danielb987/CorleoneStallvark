@@ -33,11 +33,13 @@ public class SingleLED extends Component {
 						printConnectors(graphics);
 						break;
 						
-					case PRINT_OUTLINE:
-						break;
-						
 					case PRINT_LABEL:
 						printLabel(graphics);
+						break;
+						
+					case PRINT_OUTLINE:
+					case PRINT_TEXT:
+						// Do nothing
 						break;
 						
 					default:
