@@ -1,6 +1,7 @@
 package gui;
 
 import electric.Button;
+import electric.Circle;
 import electric.Component;
 import static electric.Component.SPACING;
 import electric.Label;
@@ -230,7 +231,7 @@ public final class SwitchBoard {
 		
 		// Siding for engines
 		components.add(new Line(27, CY + 8, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(11, CY + 12, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(13, CY + 12, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new SingleLED(24, CY + 8, EAST, new Label("D105",0,-2)));
 		components.add(new SingleLED(25, CY + 8 + 2, EAST, new Label("D106",0,-2)));
 		components.add(new Button(27, CY + 8, EAST, new Label("S103",0,-2)));
@@ -238,11 +239,15 @@ public final class SwitchBoard {
 		
 		// Siding for engines
 		components.add(new Line(23, CY + 12, 20, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(11, CY + 15, 20, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(13, CY + 15, 20, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new SingleLED(20, CY + 12, EAST, new Label("D107",0,-2)));
 		components.add(new SingleLED(21, CY + 12 + 2, EAST, new Label("D108",0,-2)));
 		components.add(new Button(23, CY + 12, EAST, new Label("S104",0,-2)));
 		components.add(new Text(17, CY+15, Orientation.EAST, new Label("17",0,0,4,true)));
+		
+		// Turntable
+		components.add(new Circle(10, CY+13.5, 3.7, 0.5, Color.GRAY));
+		components.add(new Line(7, CY + 16, 12, CY + 11, SPACING/2f, 0, 0.5, Color.BLACK));
 	}
 	
 	

@@ -3,10 +3,11 @@ package electric;
 import gui.LineStyle;
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 
 /**
- * Button
+ * Line
  */
 public class Line extends Component {
 	
@@ -74,10 +75,15 @@ public class Line extends Component {
 						graphics.draw(new Line2D.Double(_x+_offsetX, _y+_offsetY, _x2+_offsetX, _y2+_offsetY));
 						break;
 						
+					case PRINT_CENTER:
+						final double r = 0.3;
+						graphics.setColor(Color.GREEN);
+						graphics.fill(new Ellipse2D.Double((_x+_x2)/2+_offsetX-r, (_y+_y2)/2+_offsetY-r, r*2, r*2));
+						break;
+						
 					case PRINT_CONNECTORS:
 					case PRINT_OUTLINE:
 					case PRINT_LABEL:
-					case PRINT_CENTER:
 						// Do nothing
 						break;
 						
