@@ -66,7 +66,6 @@ public class Label {
 		if (_clear) {
 //			graphics.setColor(Color.GREEN);
 			graphics.setColor(Color.WHITE);
-			System.out.format("Width: %1.2f, CenterX: %1.2f, Height: %1.2f, CenterY: %1.2f%n", bounds.getWidth(), bounds.getCenterX()*2, bounds.getHeight(), bounds.getCenterY()*2);
 			graphics.fill(new Rectangle2D.Double(x+_relX-bounds.getCenterX()-padX, y+_relY-bounds.getCenterY()-bounds.getHeight()-padY, bounds.getCenterX()*2+padX*2, bounds.getHeight()+padY*2));
 //			graphics.setColor(Color.RED);
 //			graphics.fill(new Rectangle2D.Double(x+_relX-bounds.getCenterX(), y+_relY-bounds.getCenterY()-bounds.getHeight(), bounds.getCenterX()*2, bounds.getHeight()));
