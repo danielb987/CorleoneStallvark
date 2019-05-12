@@ -48,7 +48,7 @@ public class Label {
 	
 	public void draw(Graphics2D graphics, double x, double y) {
 		
-		double padX = 0;
+		double padX = 0.2;
 		double padY = 0.2;
 		
 		Font font = new Font("Verdana", Font.PLAIN, _fontSize);
