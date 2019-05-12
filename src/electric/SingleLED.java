@@ -11,10 +11,6 @@ public class SingleLED extends Component {
 
 	protected Label _label;
 	
-//	public SingleLED(double x, double y, Orientation orientation) {
-//		super(x, y, orientation);
-//	}
-	
 	public SingleLED(int column, int row, Orientation orientation, Label label) {
 		super(column, row, orientation);
 		_label = label;
