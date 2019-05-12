@@ -181,18 +181,32 @@ public final class SwitchBoard {
 		
 		
 		// Siding for cabooses
-		components.add(new Line(17, CY + 4, 17 + 3, CY + 7, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(20, CY + 7, 34, CY + 7, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(20, CY + 4, EAST, new Label("D101",0,-2)));
-		components.add(new SingleLED(19, CY + 4 + 2, EAST, new Label("D102",0,-2)));
-		components.add(new Button(17, CY + 4, EAST, new Label("S101",0,-2)));
+		components.add(new Line(14, CY + 4, 18, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(18, CY + 8, 27, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(17, CY + 4, EAST, new Label("D101",0,-2)));
+		components.add(new SingleLED(16, CY + 4 + 2, EAST, new Label("D102",0,-2)));
+		components.add(new Button(14, CY + 4, EAST, new Label("S101",0,-2)));
+		components.add(new Line(31, CY + 4, 27, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(28, CY + 4, EAST, new Label("D103",0,-2)));
+		components.add(new SingleLED(29, CY + 4 + 2, EAST, new Label("D104",0,-2)));
+		components.add(new Button(31, CY + 4, EAST, new Label("S102",0,-2)));
+		components.add(new Text(21, CY+8, Orientation.EAST, new Label("15",0,0,5,true)));
 		
 		// Siding for engines
-		components.add(new Line(32, CY + 7, 32 - 3, CY + 10, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(20, CY + 10, 34, CY + 10, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(30, CY + 7, EAST, new Label("D103",0,-2)));
-		components.add(new SingleLED(29, CY + 7 + 2, EAST, new Label("D104",0,-2)));
-		components.add(new Button(27, CY + 7, EAST, new Label("S102",0,-2)));
+		components.add(new Line(27, CY + 8, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(11, CY + 12, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(24, CY + 8, EAST, new Label("D105",0,-2)));
+		components.add(new SingleLED(25, CY + 8 + 2, EAST, new Label("D106",0,-2)));
+		components.add(new Button(27, CY + 8, EAST, new Label("S103",0,-2)));
+		components.add(new Text(17, CY+12, Orientation.EAST, new Label("16",0,0,5,true)));
+		
+		// Siding for engines
+		components.add(new Line(23, CY + 12, 20, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(11, CY + 15, 20, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(20, CY + 12, EAST, new Label("D107",0,-2)));
+		components.add(new SingleLED(21, CY + 12 + 2, EAST, new Label("D108",0,-2)));
+		components.add(new Button(23, CY + 12, EAST, new Label("S104",0,-2)));
+		components.add(new Text(17, CY+15, Orientation.EAST, new Label("17",0,0,5,true)));
 	}
 	
 	
