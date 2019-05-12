@@ -47,10 +47,7 @@ public final class SwitchBoard {
 	}
 	
 	public void createLayout() {
-//		int CY = 19;	// Y position of main track
 		int CY = 14;	// Y position of main track
-		int DIST = 3;	// Y distance between tracks
-		int t;
 		
 		// Main track
 //		components.add(new Line(0, CY, 106, CY, 1, Color.BLACK));
@@ -239,16 +236,24 @@ public final class SwitchBoard {
 		components.add(new Text(17, CY+12, Orientation.EAST, new Label("16",0,0,4,true)));
 		
 		// Siding for engines
-		components.add(new Line(23, CY + 12, 20, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(13, CY + 15, 20, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(23, CY + 12, 19, CY + 16, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(10, CY + 16, 19, CY + 16, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new SingleLED(20, CY + 12, EAST, new Label("D107",0,-2)));
 		components.add(new SingleLED(21, CY + 12 + 2, EAST, new Label("D108",0,-2)));
 		components.add(new Button(23, CY + 12, EAST, new Label("S104",0,-2)));
-		components.add(new Text(17, CY+15, Orientation.EAST, new Label("17",0,0,4,true)));
+		components.add(new Text(13, CY+16, Orientation.EAST, new Label("17",0,0,4,true)));
+		
+		// Siding for engines
+		components.add(new Line(19, CY + 16, 16, CY + 19, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(10, CY + 19, 16, CY + 19, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(16, CY + 16, EAST, new Label("D109",0,-2)));
+		components.add(new SingleLED(17, CY + 16 + 2, EAST, new Label("D110",0,-2)));
+		components.add(new Button(19, CY + 16, EAST, new Label("S105",0,-2)));
+		components.add(new Text(13, CY+19, Orientation.EAST, new Label("18",0,0,4,true)));
 		
 		// Turntable
-		components.add(new Circle(10, CY+13.5, 3.7, 0.5, Color.GRAY));
-		components.add(new Line(7, CY + 16, 12, CY + 11, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Circle(7, CY+17.5, 3.7, 0.5, Color.GRAY));
+		components.add(new Line(4, CY + 20, 9, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
 		
 		
 		// Siding 6 for freight wagons
