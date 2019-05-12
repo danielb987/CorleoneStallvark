@@ -49,10 +49,6 @@ public final class SwitchBoard {
 		int CY = 19;	// Y position of main track
 		int DIST = 3;	// Y distance between tracks
 		int t;
-		components.add(new Line(0, CY - DIST*4, 10, CY - DIST*4, 0.5, Color.BLACK));
-		components.add(new Line(0, CY - DIST*3, 10, CY - DIST*3, 0.5, Color.BLACK));
-		components.add(new Line(0, CY - DIST*2, 10, CY - DIST*2, 0.5, Color.BLACK));
-		components.add(new Line(0, CY - DIST*1, 10, CY - DIST*1, 0.5, Color.BLACK));
 		
 		// Main track
 		components.add(new Line(0, CY, 106, CY, 1, Color.BLACK));
@@ -66,17 +62,39 @@ public final class SwitchBoard {
 		components.add(new SingleLED(9, CY, EAST));
 		components.add(new SingleLED(8, CY+1, NORTH));
 		components.add(new SingleLED(6, CY+DIST, EAST));
-		components.add(new Button(5,CY,EAST));
+		components.add(new Button(5, CY, EAST));
 		
-		t = 4;
+		// Crossover little right
+		components.add(new Line(25, CY, 25 - DIST, CY + DIST, DIST/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(22, CY, EAST));
+		components.add(new SingleLED(24, CY+1, NORTH));
+		components.add(new SingleLED(25, CY+DIST, EAST));
+		components.add(new Button(26, CY, EAST));
+		
 		// Siding for storage of passenger cars
 		components.add(new Line(12, CY, 12 + DIST, CY - DIST, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(15, CY - DIST, 40, CY - DIST, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(15, CY - DIST, 29, CY - DIST, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new SingleLED(15, CY, EAST));
 		components.add(new SingleLED(14, CY-2, EAST));
-//		components.add(new SingleLED(14, CY-2, NORTH));
-//		components.add(new Button(11,CY-1,NORTH));
-		components.add(new Button(12,CY,EAST));
+		components.add(new Button(12, CY, EAST));
+		components.add(new Line(29, CY - DIST, 29 + DIST, CY, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(29, CY, EAST));
+		components.add(new SingleLED(30, CY-2, EAST));
+		components.add(new Button(32, CY, EAST));
+		
+		// Siding to the left from the above siding
+		components.add(new Line(20, CY - DIST, 20 - DIST, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(17, CY - DIST*2, 10, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(17, CY - DIST, EAST));
+		components.add(new SingleLED(18, CY - DIST - 2, EAST));
+		components.add(new Button(20, CY - DIST, EAST));
+		
+		// Siding to the right from the above siding
+		components.add(new Line(24, CY - DIST, 24 + DIST, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(27, CY - DIST*2, 34, CY - DIST*2, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(27, CY - DIST, EAST));
+		components.add(new SingleLED(26, CY - DIST - 2, EAST));
+		components.add(new Button(24, CY - DIST, EAST));
 	}
 	
 	public void createComponents() {

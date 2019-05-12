@@ -56,6 +56,7 @@ public class Button extends Component {
 	private void printSymbol(Graphics2D graphics) {
 		final double SPC = Component.SPACING;
 		graphics.setColor(Color.BLUE);
+//		graphics.setColor(Color.BLACK);
 		
 		switch (_orientation) {
 			case HORIZONTAL:

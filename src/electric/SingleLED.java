@@ -49,13 +49,15 @@ public class SingleLED extends Component {
 	
 	private void printCenter(Graphics2D graphics) {
 		graphics.setColor(Color.GREEN);
+		graphics.setColor(Color.BLACK);
 		
 		graphics.fill(new Ellipse2D.Double(_x - 1f/4, _y - 1f/4, 0.5, 0.5));
 	}
 	
 	private void printSymbol(Graphics2D graphics) {
 		final double SPC = Component.SPACING;
-		graphics.setColor(Color.RED);
+//		graphics.setColor(Color.RED);
+		graphics.setColor(Color.GREEN);
 		
 		switch (_orientation) {
 			case HORIZONTAL:

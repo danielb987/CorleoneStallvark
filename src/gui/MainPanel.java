@@ -1,6 +1,5 @@
 package gui;
 
-import electric.Component;
 import electric.DrawingSettings;
 import electric.DrawingStyle;
 import java.awt.BasicStroke;
@@ -19,8 +18,6 @@ import java.awt.geom.AffineTransform;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.awt.print.PrinterException;
-import java.util.List;
-import java.util.ArrayList;
 import javax.swing.JPanel;
 
 /**
@@ -51,7 +48,7 @@ public final class MainPanel extends JPanel implements MouseListener, MouseMotio
 	
 	public MainPanel() {
 		
-		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CENTER, true);
+//		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CENTER, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_SYMBOL, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CONNECTORS, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_OUTLINE, true);
