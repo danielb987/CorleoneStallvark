@@ -93,36 +93,49 @@ public final class SwitchBoard {
 		components.add(new Button(18, CY - 3, EAST, new Label("S5",0,-2)));
 		
 		// Siding to the right from the above siding
-		components.add(new Line(23, CY - 3, 23 + 3, CY - 3*2, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(26, CY - 3*2, 40, CY - 3*2, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(23, CY - 3, 27, CY - 7, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(27, CY - 7, 38, CY - 7, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new SingleLED(26, CY - 3, EAST, new Label("D13",0,-2)));
 		components.add(new SingleLED(25, CY - 3 - 2, EAST, new Label("D14",0,-2)));
 		components.add(new Button(23, CY - 3, EAST, new Label("S6",0,-2)));
 		
 		// Siding to the right from the above siding
-		components.add(new Line(29, CY - 3*2, 29 + 3, CY - 3*3, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(32, CY - 3*3, 40, CY - 3*3, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(32, CY - 3*2, EAST, new Label("D15",0,-2)));
-		components.add(new SingleLED(31, CY - 3*2 - 2, EAST, new Label("D16",0,-2)));
-		components.add(new Button(29, CY - 3*2, EAST, new Label("S7",0,-2)));
+		components.add(new Line(27, CY - 7, 27 + 3, CY - 10, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(30, CY - 10, 38, CY - 10, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(30, CY - 7, EAST, new Label("D15",0,-2)));
+		components.add(new SingleLED(29, CY - 7 - 2, EAST, new Label("D16",0,-2)));
+		components.add(new Button(27, CY - 7, EAST, new Label("S7",0,-2)));
 		
 		
 		
+		
+		// Passenger track 3
+		components.add(new Line(42, CY, 46, CY - 4, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(46, CY - 4, 58, CY - 4, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(45, CY, EAST, new Label("D23",0,-2)));
+		components.add(new SingleLED(44, CY-2, EAST, new Label("D24",0,-2)));
+		components.add(new Button(42, CY, EAST, new Label("S11",0,-2)));
+		components.add(new Line(58, CY - 4, 62, CY, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new SingleLED(59, CY, EAST, new Label("D25",0,-2)));
+		components.add(new SingleLED(60, CY-2, EAST, new Label("D26",0,-2)));
+		components.add(new Button(62, CY, EAST, new Label("S12",0,-2)));
+		components.add(new Text(49, CY-4, Orientation.EAST, new Label("3",0,0,5,true)));
 		
 		// Passenger track 2
 		components.add(new Line(36, CY, 44, CY - 8, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(44, CY - 8, 66, CY - 8, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(44, CY - 8, 62, CY - 8, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new SingleLED(39, CY, EAST, new Label("D17",0,-2)));
 		components.add(new SingleLED(38, CY-2, EAST, new Label("D18",0,-2)));
 		components.add(new Button(36, CY, EAST, new Label("S8",0,-2)));
-		components.add(new Line(58, CY - 8, 62, CY - 4, SPACING/2f, 0, 0.5, Color.BLACK));
+		components.add(new Line(54, CY - 8, 58, CY - 4, SPACING/2f, 0, 0.5, Color.BLACK));
 //		components.add(new Line(64, CY - 8, 68, CY - 4, SPACING/2f, 0, 0.5, Color.BLACK));
 		components.add(new Text(49, CY-8, Orientation.EAST, new Label("2",0,0,5,true)));
 		
 		// Engine storage track
-		components.add(new SingleLED(61, CY-8, EAST, new Label("D17+",0,-2)));
-		components.add(new SingleLED(60, CY-8+2, EAST, new Label("D18+",0,-2)));
-		components.add(new Button(58, CY-8, EAST, new Label("S8+",0,-2)));
+		components.add(new SingleLED(57, CY-8, EAST, new Label("D27",0,-2)));
+		components.add(new SingleLED(56, CY-8+2, EAST, new Label("D28",0,-2)));
+		components.add(new SingleLED(55, CY-4, EAST, new Label("D29",0,-2)));
+		components.add(new Button(58, CY-4, EAST, new Label("S13",0,-2)));
 		
 //		components.add(new SingleLED(29+1+20, CY, EAST, new Label("D19",0,-2)));
 //		components.add(new SingleLED(30+1+20, CY-2, EAST, new Label("D20",0,-2)));
@@ -140,18 +153,6 @@ public final class SwitchBoard {
 		components.add(new SingleLED(52, CY-8-2, EAST, new Label("D22",0,-2)));
 		components.add(new Button(54, CY-8, EAST, new Label("S10",0,-2)));
 		components.add(new Text(49, CY-11, Orientation.EAST, new Label("1",0,0,5,true)));
-		
-		// Passenger track 3
-		components.add(new Line(42, CY, 46, CY - 4, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new Line(46, CY - 4, 62, CY - 4, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(45, CY, EAST, new Label("D23",0,-2)));
-		components.add(new SingleLED(44, CY-2, EAST, new Label("D24",0,-2)));
-		components.add(new Button(42, CY, EAST, new Label("S11",0,-2)));
-		components.add(new Line(62, CY - 4, 66, CY, SPACING/2f, 0, 0.5, Color.BLACK));
-		components.add(new SingleLED(63, CY, EAST, new Label("D25",0,-2)));
-		components.add(new SingleLED(64, CY-2, EAST, new Label("D26",0,-2)));
-		components.add(new Button(66, CY, EAST, new Label("S12",0,-2)));
-		components.add(new Text(49, CY-4, Orientation.EAST, new Label("3",0,0,5,true)));
 		
 		components.add(new Text(49, CY, Orientation.EAST, new Label("4",0,0,5,true)));
 		components.add(new Text(49, CY+4, Orientation.EAST, new Label("5",0,0,5,true)));
