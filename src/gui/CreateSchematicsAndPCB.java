@@ -101,7 +101,8 @@ public final class CreateSchematicsAndPCB {
                     
                     newButtonComponent
 //                        .moveRelativeOnSchematics(schematicsX, schematicsY);
-                        .moveAbsoluteOnSchematics(c.getX()*3, c.getY()*3);
+//                        .moveAbsoluteOnSchematics(c.getX()*3, c.getY()*3);
+                        .moveAbsoluteOnSchematics(c.getX()*2*3, c.getY()*2*3);
                     
                     newButtonComponent.moveAbsoluteOnPCB(c.getX()*3, c.getY()*3);
 /*AAA                    
@@ -135,10 +136,12 @@ public final class CreateSchematicsAndPCB {
                     
                     newDiodeComponent
 //                        .moveRelativeOnSchematics(schematicsX, schematicsY);
-                        .moveAbsoluteOnSchematics(c.getX(), c.getY());
+//                        .moveAbsoluteOnSchematics(c.getX()*3, c.getY()*3);
+                        .moveAbsoluteOnSchematics(c.getX()*2*3, c.getY()*2*3);
                     newResistorComponent
 //                        .moveRelativeOnSchematics(schematicsX, schematicsY);
-                        .moveAbsoluteOnSchematics(c.getX(), c.getY());
+//                        .moveAbsoluteOnSchematics(c.getX()*3, c.getY()*3);
+                        .moveAbsoluteOnSchematics(c.getX()*2*3, c.getY()*2*3+500);
                     
                     newDiodeComponent.moveAbsoluteOnPCB(c.getX()*3, c.getY()*3);
                     newResistorComponent.moveAbsoluteOnPCB(c.getX()*3, c.getY()*3);
