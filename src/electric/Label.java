@@ -75,6 +75,10 @@ public class Label {
 		tl.draw(graphics, (float)(x+_relX-bounds.getCenterX()), (float)(y+_relY-bounds.getCenterY()));
 	}
 	
+	public String getName() {
+		return _name;
+	}
+	
 /*
 */	
 }

@@ -29,4 +29,12 @@ public abstract class Component {
 		return _label;
 	}
 	
+	public double getX() {
+		return _x;
+	}
+	
+	public double getY() {
+		return _y;
+	}
+	
 }

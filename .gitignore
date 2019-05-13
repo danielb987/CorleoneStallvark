@@ -31,3 +31,6 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 
+# Diptrace files
+~*.dip~
+~*.dch~
