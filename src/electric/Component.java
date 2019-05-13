@@ -14,13 +14,19 @@ public abstract class Component {
 	protected double _column = -1;
 	protected double _row = -1;
 	protected Orientation _orientation;
+	protected Label _label;
 	
-	protected Component(double column, double row, Orientation orientation) {
+	protected Component(double column, double row, Orientation orientation, Label label) {
 		_x = column * SPACING;
 		_y = row * SPACING;
 		_orientation = orientation;
+		_label = label;
 	}
 	
 	abstract public void draw(Graphics2D graphics);
+	
+	public Label getLabel() {
+		return _label;
+	}
 	
 }

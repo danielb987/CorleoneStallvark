@@ -8,11 +8,8 @@ import java.awt.Graphics2D;
  */
 public class Text extends Component {
 
-	protected Label _label;
-	
 	public Text(double column, double row, Orientation orientation, Label label) {
-		super(column, row, orientation);
-		_label = label;
+		super(column, row, orientation, label);
 	}
 	
 	@Override

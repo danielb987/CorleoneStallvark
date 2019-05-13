@@ -17,7 +17,7 @@ public class Circle extends Component {
 	protected Color _color;
 	
 	public Circle(double column, double row, double radiusColumn, double thickness, LineStyle lineStyle) {
-		super(column, row, null);
+		super(column, row, null, null);
 		_radius = radiusColumn * SPACING;
 		_radiusColumn = radiusColumn;
 		_thickness = thickness;
@@ -25,7 +25,7 @@ public class Circle extends Component {
 	}
 	
 	public Circle(double column, double row, double radiusColumn, double thickness, Color color) {
-		super(column, row, null);
+		super(column, row, null, null);
 		_radius = radiusColumn * SPACING;
 		_radiusColumn = radiusColumn;
 		_thickness = thickness;

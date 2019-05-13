@@ -9,11 +9,8 @@ import java.awt.geom.Ellipse2D;
  */
 public class Button extends Component {
 
-	protected Label _label;
-	
 	public Button(int column, int row, Orientation orientation, Label label) {
-		super(column, row, orientation);
-		_label = label;
+		super(column, row, orientation, label);
 	}
 	
 	@Override

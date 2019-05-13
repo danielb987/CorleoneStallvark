@@ -25,9 +25,40 @@ public final class SwitchBoard {
 	
 	private final List<Component> components = new ArrayList<>();
 	
+	int numButtons = 0;
+	int numLEDs = 0;
+	int numLines = 0;
+	int numCircles = 0;
+	int numLabels = 0;
+	int numTexts = 0;
+	
 	public SwitchBoard() {
 		createBoard();
 		createLayout();
+		
+		for (Component c : components) {
+			if (c instanceof Button) numButtons++;
+			else if (c instanceof SingleLED) numLEDs++;
+			else if (c instanceof Line) numLines++;
+			else if (c instanceof Circle) numCircles++;
+			else if (c instanceof Text) numTexts++;
+			else throw new RuntimeException("Unknown component: "+c.getClass().getName());
+			
+			if (! (c instanceof Text) && (c.getLabel() != null)) numLabels++;
+		}
+		
+		System.out.format("Num buttons: %d%n", numButtons);
+		System.out.format("Num LEDs: %d%n", numLEDs);
+		System.out.format("Num texts: %d%n", numTexts);
+		System.out.format("Num labels: %d%n", numLabels);
+		System.out.format("Num lines: %d%n", numLines);
+		System.out.format("Num circles: %d%n", numCircles);
+		
+		System.out.format("Num LocoIO cards for buttons: %1.0f%n", Math.ceil(numButtons/16d));
+		System.out.format("Num LocoIO cards for LEDs: %1.0f%n", Math.ceil(numLEDs/16d));
+		
+		CreateSchematicsAndPCB createSchematicsAndPCB = new CreateSchematicsAndPCB(components);
+		createSchematicsAndPCB.doIt();
 	}
 	
 	public void createBoard() {
