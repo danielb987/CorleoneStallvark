@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 import javadiptraceasciilib.DiptraceComponent;
 import javadiptraceasciilib.DiptraceComponentPin;
+import javadiptraceasciilib.DiptraceItem;
 import javadiptraceasciilib.DiptraceNet;
 import javadiptraceasciilib.DiptraceNetNameAlreadyExistsException;
 import javadiptraceasciilib.DiptraceNotFoundException;
@@ -62,6 +63,13 @@ public final class CreateSchematicsAndPCB {
                 = diptraceProject.getComponentByRefDes("D_Yellow");
             DiptraceComponent diptraceComponentR1
                 = diptraceProject.getComponentByRefDes("R1orig");
+			
+            DiptraceItem diptraceComponent_ShapeLineMainTrack
+                = diptraceProject.getShapeByRefDes("ShapeLineMainTrack");
+            DiptraceItem diptraceComponent_ShapeLineMainSidingTrack
+                = diptraceProject.getShapeByRefDes("ShapeLineMainSidingTrack");
+            DiptraceItem diptraceComponent_ShapeLineSidingTrack
+                = diptraceProject.getShapeByRefDes("ShapeLineSidingTrack");
             
             DiptraceNet diptraceNetNet1
                 = diptraceProject.getNetByName("GND_1");
@@ -79,12 +87,11 @@ public final class CreateSchematicsAndPCB {
 			
 			
 			
-            // Count how many LEDs and resistors we have. We start with one
-            // since we already have one item of each in the Diptrace ascii
-            // files that we already has opened to create our project.
-			int numSwitches = 1;
-            int numDiodes = 1;
-            int numResistors = 1;
+            // Count how many LEDs and resistors we have.
+			int numSwitches = 0;
+            int numDiodes = 0;
+            int numResistors = 0;
+			int numLines = 0;
 			
 			for (Component c : _components) {
 				
@@ -164,6 +171,19 @@ public final class CreateSchematicsAndPCB {
 				} else if (c instanceof Text) {
 					
 				} else if (c instanceof Line) {
+					
+                    // What name should the new components have?
+                    String newLineName
+                        = String.format("L%d", ++numLines);
+                    
+                    DiptraceComponent newLineComponent =
+                        diptraceComponent_ShapeLineMainTrack.duplicate();
+//                        diptraceComponent_ShapeLineMainTrack.duplicate(newLineName);
+                    
+                    newLineComponent
+                        .moveAbsoluteOnSchematics(c.getX()*2*3, c.getY()*2*3);
+                    
+                    newLineComponent.moveAbsoluteOnPCB(c.getX()*3, c.getY()*3);
 					
 				} else if (c instanceof Circle) {
 					
