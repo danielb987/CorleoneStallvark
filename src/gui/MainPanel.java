@@ -323,6 +323,11 @@ public final class MainPanel extends JPanel implements KeyListener, MouseListene
 				repaint();
 				break;
 				
+			case '+':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.LEFT_SMALL_SIDINGS);
+				repaint();
+				break;
+				
 			default:
 				System.out.format("Key typed: %c%n", e.getKeyChar());
 		}
