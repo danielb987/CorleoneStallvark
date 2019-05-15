@@ -38,6 +38,8 @@ public final class SwitchBoard {
 		COMPONENT_LABELS,
 	}
 	
+	private static final boolean SUPPORT_SMALL_SIDINGS = false;
+	
 	private boolean drawGrid = true;
 	
 	private final List<Component> componentsGrid = new ArrayList<>();
@@ -209,30 +211,46 @@ public final class SwitchBoard {
 		componentsLeftSide.add(new Button(31, CY, EAST, new Label("S4",0,-2)));
 		componentsTopSide.add(new Text(20.5, CY-3, Orientation.EAST, new Label("11",0,0,4,true)));
 		
-		// Siding to the left from the above siding
-		componentsTopSide.add(new Line(18, CY - 3, 15, CY - 6, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsTopSide.add(new Line(15, CY - 6, 8, CY - 6, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSideSmallSidings.add(new SingleLED(15, CY - 3, EAST, new Label("D11",0,-2)));
-		componentsLeftSideSmallSidings.add(new SingleLED(16, CY - 3 - 2, EAST, new Label("D12",0,-2)));
-		componentsLeftSideSmallSidings.add(new Button(18, CY - 3, EAST, new Label("S5",0,-2)));
-		componentsTopSide.add(new Text(11.5, CY-6, Orientation.EAST, new Label("12",0,0,4,true)));
-		
-		// Siding to the right from the above siding
-		componentsTopSide.add(new Line(23, CY - 3, 27, CY - 7, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsTopSide.add(new Line(27, CY - 7, 38, CY - 7, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSideSmallSidings.add(new SingleLED(26, CY - 3, EAST, new Label("D13",0,-2)));
-		componentsLeftSideSmallSidings.add(new SingleLED(25, CY - 3 - 2, EAST, new Label("D14",0,-2)));
-		componentsLeftSideSmallSidings.add(new Button(23, CY - 3, EAST, new Label("S6",0,-2)));
-		componentsTopSide.add(new Text(34, CY-7, Orientation.EAST, new Label("13",0,0,4,true)));
-		
-		// Siding to the right from the above siding
-		componentsTopSide.add(new Line(27, CY - 7, 27 + 3, CY - 10, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsTopSide.add(new Line(30, CY - 10, 38, CY - 10, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSideSmallSidings.add(new SingleLED(30, CY - 7, EAST, new Label("D15",0,-2)));
-		componentsLeftSideSmallSidings.add(new SingleLED(29, CY - 7 - 2, EAST, new Label("D16",0,-2)));
-		componentsLeftSideSmallSidings.add(new Button(27, CY - 7, EAST, new Label("S7",0,-2)));
-		componentsTopSide.add(new Text(34, CY-10, Orientation.EAST, new Label("14",0,0,4,true)));
-		
+		if (SUPPORT_SMALL_SIDINGS) {
+			// Siding to the left from the above siding
+			componentsTopSide.add(new Line(18, CY - 3, 15, CY - 6, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(15, CY - 6, 8, CY - 6, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSideSmallSidings.add(new SingleLED(15, CY - 3, EAST, new Label("D11",0,-2)));
+			componentsLeftSideSmallSidings.add(new SingleLED(16, CY - 3 - 2, EAST, new Label("D12",0,-2)));
+			componentsLeftSideSmallSidings.add(new Button(18, CY - 3, EAST, new Label("S5",0,-2)));
+			componentsTopSide.add(new Text(11.5, CY-6, Orientation.EAST, new Label("12",0,0,4,true)));
+
+			// Siding to the right from the above siding
+			componentsTopSide.add(new Line(23, CY - 3, 27, CY - 7, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(27, CY - 7, 38, CY - 7, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSideSmallSidings.add(new SingleLED(26, CY - 3, EAST, new Label("D13",0,-2)));
+			componentsLeftSideSmallSidings.add(new SingleLED(25, CY - 3 - 2, EAST, new Label("D14",0,-2)));
+			componentsLeftSideSmallSidings.add(new Button(23, CY - 3, EAST, new Label("S6",0,-2)));
+			componentsTopSide.add(new Text(34, CY-7, Orientation.EAST, new Label("13",0,0,4,true)));
+
+			// Siding to the right from the above siding
+			componentsTopSide.add(new Line(27, CY - 7, 27 + 3, CY - 10, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(30, CY - 10, 38, CY - 10, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSideSmallSidings.add(new SingleLED(30, CY - 7, EAST, new Label("D15",0,-2)));
+			componentsLeftSideSmallSidings.add(new SingleLED(29, CY - 7 - 2, EAST, new Label("D16",0,-2)));
+			componentsLeftSideSmallSidings.add(new Button(27, CY - 7, EAST, new Label("S7",0,-2)));
+			componentsTopSide.add(new Text(34, CY-10, Orientation.EAST, new Label("14",0,0,4,true)));
+		} else {
+			// Siding to the left from the above siding
+			componentsTopSide.add(new Line(18, CY - 3, 15, CY - 6, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(15, CY - 6, 8, CY - 6, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Text(11.5, CY-6, Orientation.EAST, new Label("12",0,0,4,true)));
+
+			// Siding to the right from the above siding
+			componentsTopSide.add(new Line(24, CY - 3, 27, CY - 6, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(27, CY - 6, 37, CY - 6, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Text(33, CY-6, Orientation.EAST, new Label("13",0,0,4,true)));
+
+			// Siding to the right from the above siding
+			componentsTopSide.add(new Line(27, CY - 6, 27 + 3, CY - 9, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(30, CY - 9, 37, CY - 9, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Text(33, CY-9, Orientation.EAST, new Label("14",0,0,4,true)));
+		}
 		
 		
 		
@@ -304,46 +322,78 @@ public final class SwitchBoard {
 		
 		
 		
-		// Siding for cabooses
-		componentsTopSide.add(new Line(14, CY + 4, 18, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsTopSide.add(new Line(18, CY + 8, 27, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSide.add(new SingleLED(17, CY + 4, EAST, new Label("D101",0,-2)));
-		componentsLeftSide.add(new SingleLED(16, CY + 4 + 2, EAST, new Label("D102",0,-2)));
-		componentsLeftSide.add(new Button(14, CY + 4, EAST, new Label("S101",0,-2)));
-		componentsTopSide.add(new Line(31, CY + 4, 27, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSide.add(new SingleLED(28, CY + 4, EAST, new Label("D103",0,-2)));
-		componentsLeftSide.add(new SingleLED(29, CY + 4 + 2, EAST, new Label("D104",0,-2)));
-		componentsLeftSide.add(new Button(31, CY + 4, EAST, new Label("S102",0,-2)));
-		componentsTopSide.add(new Text(21, CY+8, Orientation.EAST, new Label("15",0,0,4,true)));
-		
-		// Siding for engines
-		componentsTopSide.add(new Line(27, CY + 8, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsTopSide.add(new Line(13, CY + 12, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSideSmallSidings.add(new SingleLED(24, CY + 8, EAST, new Label("D105",0,-2)));
-		componentsLeftSideSmallSidings.add(new SingleLED(25, CY + 8 + 2, EAST, new Label("D106",0,-2)));
-		componentsLeftSideSmallSidings.add(new Button(27, CY + 8, EAST, new Label("S103",0,-2)));
-		componentsTopSide.add(new Text(17, CY+12, Orientation.EAST, new Label("16",0,0,4,true)));
-		
-		// Siding for engines
-		componentsTopSide.add(new Line(23, CY + 12, 19, CY + 16, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsTopSide.add(new Line(10, CY + 16, 19, CY + 16, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSideSmallSidings.add(new SingleLED(20, CY + 12, EAST, new Label("D107",0,-2)));
-		componentsLeftSideSmallSidings.add(new SingleLED(21, CY + 12 + 2, EAST, new Label("D108",0,-2)));
-		componentsLeftSideSmallSidings.add(new Button(23, CY + 12, EAST, new Label("S104",0,-2)));
-		componentsTopSide.add(new Text(13, CY+16, Orientation.EAST, new Label("17",0,0,4,true)));
-		
-		// Siding for engines
-		componentsTopSide.add(new Line(19, CY + 16, 16, CY + 19, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsTopSide.add(new Line(10, CY + 19, 16, CY + 19, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSideSmallSidings.add(new SingleLED(16, CY + 16, EAST, new Label("D109",0,-2)));
-		componentsLeftSideSmallSidings.add(new SingleLED(17, CY + 16 + 2, EAST, new Label("D110",0,-2)));
-		componentsLeftSideSmallSidings.add(new Button(19, CY + 16, EAST, new Label("S105",0,-2)));
-		componentsTopSide.add(new Text(13, CY+19, Orientation.EAST, new Label("18",0,0,4,true)));
-		
-		// Turntable
-		componentsTopSide.add(new Circle(7, CY+17.5, 3.7, 0.5, Color.GRAY));
-		componentsTopSide.add(new Line(4, CY + 20, 9, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
-		
+		if (SUPPORT_SMALL_SIDINGS) {
+			// Siding for cabooses
+			componentsTopSide.add(new Line(14, CY + 4, 18, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(18, CY + 8, 27, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSide.add(new SingleLED(17, CY + 4, EAST, new Label("D101",0,-2)));
+			componentsLeftSide.add(new SingleLED(16, CY + 4 + 2, EAST, new Label("D102",0,-2)));
+			componentsLeftSide.add(new Button(14, CY + 4, EAST, new Label("S101",0,-2)));
+			componentsTopSide.add(new Line(31, CY + 4, 27, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSide.add(new SingleLED(28, CY + 4, EAST, new Label("D103",0,-2)));
+			componentsLeftSide.add(new SingleLED(29, CY + 4 + 2, EAST, new Label("D104",0,-2)));
+			componentsLeftSide.add(new Button(31, CY + 4, EAST, new Label("S102",0,-2)));
+			componentsTopSide.add(new Text(21, CY+8, Orientation.EAST, new Label("15",0,0,4,true)));
+
+			// Siding for engines
+			componentsTopSide.add(new Line(27, CY + 8, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(13, CY + 12, 23, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSideSmallSidings.add(new SingleLED(24, CY + 8, EAST, new Label("D105",0,-2)));
+			componentsLeftSideSmallSidings.add(new SingleLED(25, CY + 8 + 2, EAST, new Label("D106",0,-2)));
+			componentsLeftSideSmallSidings.add(new Button(27, CY + 8, EAST, new Label("S103",0,-2)));
+			componentsTopSide.add(new Text(17, CY+12, Orientation.EAST, new Label("16",0,0,4,true)));
+
+			// Siding for engines
+			componentsTopSide.add(new Line(23, CY + 12, 19, CY + 16, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(10, CY + 16, 19, CY + 16, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSideSmallSidings.add(new SingleLED(20, CY + 12, EAST, new Label("D107",0,-2)));
+			componentsLeftSideSmallSidings.add(new SingleLED(21, CY + 12 + 2, EAST, new Label("D108",0,-2)));
+			componentsLeftSideSmallSidings.add(new Button(23, CY + 12, EAST, new Label("S104",0,-2)));
+			componentsTopSide.add(new Text(13, CY+16, Orientation.EAST, new Label("17",0,0,4,true)));
+
+			// Siding for engines
+			componentsTopSide.add(new Line(19, CY + 16, 16, CY + 19, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(10, CY + 19, 16, CY + 19, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSideSmallSidings.add(new SingleLED(16, CY + 16, EAST, new Label("D109",0,-2)));
+			componentsLeftSideSmallSidings.add(new SingleLED(17, CY + 16 + 2, EAST, new Label("D110",0,-2)));
+			componentsLeftSideSmallSidings.add(new Button(19, CY + 16, EAST, new Label("S105",0,-2)));
+			componentsTopSide.add(new Text(13, CY+19, Orientation.EAST, new Label("18",0,0,4,true)));
+
+			// Turntable
+			componentsTopSide.add(new Circle(7, CY+17.5, 3.7, 0.5, Color.GRAY));
+			componentsTopSide.add(new Line(4, CY + 20, 9, CY + 15, SPACING/2f, 0, 0.5, Color.BLACK));
+		} else {
+			// Siding for cabooses
+			componentsTopSide.add(new Line(16, CY + 4, 19, CY + 7, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(19, CY + 7, 28, CY + 7, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSide.add(new SingleLED(19, CY + 4, EAST, new Label("D101",0,-2)));
+			componentsLeftSide.add(new SingleLED(18, CY + 4 + 2, EAST, new Label("D102",0,-2)));
+			componentsLeftSide.add(new Button(16, CY + 4, EAST, new Label("S101",0,-2)));
+			componentsTopSide.add(new Line(31, CY + 4, 28, CY + 7, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsLeftSide.add(new SingleLED(28, CY + 4, EAST, new Label("D103",0,-2)));
+			componentsLeftSide.add(new SingleLED(29, CY + 4 + 2, EAST, new Label("D104",0,-2)));
+			componentsLeftSide.add(new Button(31, CY + 4, EAST, new Label("S102",0,-2)));
+			componentsTopSide.add(new Text(23, CY+7, Orientation.EAST, new Label("15",0,0,4,true)));
+
+			// Siding for engines
+			componentsTopSide.add(new Line(28, CY + 7, 25, CY + 10, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(15, CY + 10, 25, CY + 10, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Text(19, CY+10, Orientation.EAST, new Label("16",0,0,4,true)));
+
+			// Siding for engines
+			componentsTopSide.add(new Line(25, CY + 10, 22, CY + 13, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(13, CY + 13, 22, CY + 13, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Text(16, CY+13, Orientation.EAST, new Label("17",0,0,4,true)));
+
+			// Siding for engines
+			componentsTopSide.add(new Line(22, CY + 13, 19, CY + 16, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Line(13, CY + 16, 19, CY + 16, SPACING/2f, 0, 0.5, Color.BLACK));
+			componentsTopSide.add(new Text(16, CY+16, Orientation.EAST, new Label("18",0,0,4,true)));
+
+			// Turntable
+			componentsTopSide.add(new Circle(10, CY+14.5, 3.7, 0.5, Color.GRAY));
+			componentsTopSide.add(new Line(7, CY + 17, 12, CY + 12, SPACING/2f, 0, 0.5, Color.BLACK));
+		}
 		
 		// Siding 6 for freight wagons
 		componentsTopSide.add(new Line(35, CY + 4, 39, CY + 8, SPACING/2f, 0, 0.5, Color.BLACK));
