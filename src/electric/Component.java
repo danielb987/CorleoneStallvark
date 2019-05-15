@@ -37,4 +37,6 @@ public abstract class Component {
 		return _y;
 	}
 	
+	public abstract int getNumPins();
+	
 }

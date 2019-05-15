@@ -137,4 +137,9 @@ public class SingleLED extends Component {
 		}
 	}
 	
+	@Override
+	public int getNumPins() {
+		return 2;
+	}
+	
 }

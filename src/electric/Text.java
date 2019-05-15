@@ -65,5 +65,9 @@ public class Text extends Component {
 		}
 	}
 	
+	@Override
+	public int getNumPins() {
+		return 0;
+	}
 	
 }

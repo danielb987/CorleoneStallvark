@@ -44,13 +44,13 @@ public final class MainPanel extends JPanel implements MouseListener, MouseMotio
 	private int lastX = 0;
 	private int lastY = 0;
 	
-	private final SwitchBoard switchBoard = new SwitchBoard();
+	private final SwitchBoard switchBoard = new SwitchBoard().init();
 	
 	public MainPanel() {
 		
 //		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CENTER, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_SYMBOL, true);
-//		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CONNECTORS, true);
+		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CONNECTORS, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_OUTLINE, true);
 //		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_LABEL, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_TEXT, true);

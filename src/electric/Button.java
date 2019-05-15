@@ -150,4 +150,9 @@ public class Button extends Component {
 		}
 	}
 	
+	@Override
+	public int getNumPins() {
+		return 4;
+	}
+	
 }

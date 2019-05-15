@@ -32,9 +32,11 @@ public final class SwitchBoard {
 	int numLabels = 0;
 	int numTexts = 0;
 	
-	public SwitchBoard() {
+	public SwitchBoard init() {
 		createBoard();
 		createLayout();
+		
+		int numPins = 0;
 		
 		for (Component c : components) {
 			if (c instanceof Button) numButtons++;
@@ -45,8 +47,11 @@ public final class SwitchBoard {
 			else throw new RuntimeException("Unknown component: "+c.getClass().getName());
 			
 			if (! (c instanceof Text) && (c.getLabel() != null)) numLabels++;
+			
+			numPins += c.getNumPins();
 		}
 		
+		System.out.format("Num pins: %d%n", numPins);
 		System.out.format("Num buttons: %d%n", numButtons);
 		System.out.format("Num LEDs: %d%n", numLEDs);
 		System.out.format("Num texts: %d%n", numTexts);
@@ -59,6 +64,8 @@ public final class SwitchBoard {
 		
 		CreateSchematicsAndPCB createSchematicsAndPCB = new CreateSchematicsAndPCB(components);
 		createSchematicsAndPCB.doIt();
+		
+		return this;
 	}
 	
 	public void createBoard() {
@@ -74,7 +81,6 @@ public final class SwitchBoard {
 				components.add(new Line(i, 0, i, (int)(MainPanel.STALLVERK_HEIGHT/Component.SPACING), thickness, Color.LIGHT_GRAY));
 		}
 		
-		// Draw board outline
 		components.add(new Line(0, 0, 89, 0, thickness*2, Color.BLACK));
 		components.add(new Line(0, 0, 0, 39, thickness*2, Color.BLACK));
 		components.add(new Line(0, 39, 89, 39, thickness*2, Color.BLACK));

@@ -62,5 +62,10 @@ public class Circle extends Component {
 			}
 		}
 	}
+	
+	@Override
+	public int getNumPins() {
+		return 0;
+	}
 
 }

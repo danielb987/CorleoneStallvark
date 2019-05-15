@@ -6,6 +6,7 @@ import electric.Component;
 import electric.Line;
 import electric.SingleLED;
 import electric.Text;
+import java.awt.geom.Point2D;
 import java.io.IOException;
 import java.util.List;
 import javadiptraceasciilib.DiptraceComponent;
@@ -16,6 +17,7 @@ import javadiptraceasciilib.DiptraceNetNameAlreadyExistsException;
 import javadiptraceasciilib.DiptraceNotFoundException;
 import javadiptraceasciilib.DiptraceProject;
 import javadiptraceasciilib.DiptraceRefDesAlreadyExistsException;
+import javadiptraceasciilib.DiptraceSuperShapeItem;
 
 /**
  * Create the Diptrace schematics and PCB
@@ -172,18 +174,23 @@ public final class CreateSchematicsAndPCB {
 					
 				} else if (c instanceof Line) {
 					
+					Line line = (Line) c;
+					
                     // What name should the new components have?
                     String newLineName
                         = String.format("L%d", ++numLines);
                     
-                    DiptraceComponent newLineComponent =
-                        diptraceComponent_ShapeLineMainTrack.duplicate();
+                    DiptraceSuperShapeItem newLineShape =
+                        (DiptraceSuperShapeItem) diptraceComponent_ShapeLineMainTrack.duplicate();
 //                        diptraceComponent_ShapeLineMainTrack.duplicate(newLineName);
+					System.out.format("Shape: %s%n", newLineShape.getClass().getName());
                     
-                    newLineComponent
-                        .moveAbsoluteOnSchematics(c.getX()*2*3, c.getY()*2*3);
+					newLineShape.setPoint(0, new Point2D.Double(line.getX()*3,line.getY()*3));
+					newLineShape.setPoint(1, new Point2D.Double(line.getX2()*3,line.getY2()*3));
+//                    newLineComponent
+//                        .moveAbsoluteOnSchematics(c.getX()*2*3, c.getY()*2*3);
                     
-                    newLineComponent.moveAbsoluteOnPCB(c.getX()*3, c.getY()*3);
+//                    newLineComponent.moveAbsoluteOnPCB(c.getX()*3, c.getY()*3);
 					
 				} else if (c instanceof Circle) {
 					

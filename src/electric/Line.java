@@ -94,5 +94,18 @@ public class Line extends Component {
 			}
 		}
 	}
-
+	
+	public double getX2() {
+		return _x2;
+	}
+	
+	public double getY2() {
+		return _y2;
+	}
+	
+	@Override
+	public int getNumPins() {
+		return 0;
+	}
+	
 }
