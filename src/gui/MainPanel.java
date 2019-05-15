@@ -9,6 +9,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -23,12 +25,13 @@ import javax.swing.JPanel;
 /**
  * Main panel
  */
-public final class MainPanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener, Printable {
+public final class MainPanel extends JPanel implements KeyListener, MouseListener, MouseMotionListener, MouseWheelListener, Printable {
 	
 	public static final double PAGE_WIDTH = 297;
 	public static final double PAGE_HEIGHT = 210;
 	
-	public static final int STALLVERK_WIDTH = 227;
+//	public static final int STALLVERK_WIDTH = 227;
+	public static final int STALLVERK_WIDTH = 236;
 	public static final int STALLVERK_HEIGHT = 100;
 	
 	private double centerX = STALLVERK_WIDTH / 2d;
@@ -52,12 +55,15 @@ public final class MainPanel extends JPanel implements MouseListener, MouseMotio
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_SYMBOL, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CONNECTORS, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_OUTLINE, true);
-//		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_LABEL, true);
+		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_LABEL, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_TEXT, true);
 		
+		addKeyListener(this);
 		addMouseListener(this);
 		addMouseMotionListener(this);
 		addMouseWheelListener(this);
+		setFocusable(true);
+        requestFocusInWindow();
 	}
 	
 	@Override
@@ -267,6 +273,67 @@ public final class MainPanel extends JPanel implements MouseListener, MouseMotio
 		bufferGraphics.drawString(str, 2, 10);
 		
 		g.drawImage(offscreenImage, 0, 0, this);
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		switch (e.getKeyChar()) {
+			case '1':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.TOP);
+				repaint();
+				break;
+				
+			case '2':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.LEFT);
+				repaint();
+				break;
+				
+			case '3':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.RIGHT);
+				repaint();
+				break;
+				
+			case '4':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.GRID);
+				repaint();
+				break;
+				
+			case '5':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.OUTLINE_TOP);
+				repaint();
+				break;
+				
+			case '6':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.OUTLINE_LEFT);
+				repaint();
+				break;
+				
+			case '7':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.OUTLINE_RIGHT);
+				repaint();
+				break;
+				
+			case '9':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.COMPONENT_PINS);
+				repaint();
+				break;
+				
+			case '0':
+				switchBoard.changeSideVisibility(SwitchBoard.Side.COMPONENT_LABELS);
+				repaint();
+				break;
+				
+			default:
+				System.out.format("Key typed: %c%n", e.getKeyChar());
+		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
 	}
 
 }
