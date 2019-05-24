@@ -75,14 +75,39 @@ public final class SwitchBoard {
 		}
 	}
 	
+	public Component getComponentByLabel(String label, List<Component> components) {
+		for (Component c : components) {
+			Label l = c.getLabel();
+			if (l != null) {
+				if (label.equals(l.getName())) {
+					return c;
+				}
+			}
+		}
+		return null;
+	}
+	
+	public Component getComponentByLabel(String label) {
+		Component c;
+		if ((c = getComponentByLabel(label, componentsGrid)) != null) { return c; }
+		if ((c = getComponentByLabel(label, componentsTopSide)) != null) { return c; }
+		if ((c = getComponentByLabel(label, componentsLeftSide)) != null) { return c; }
+		if ((c = getComponentByLabel(label, componentsLeftSideSmallSidings)) != null) { return c; }
+		if ((c = getComponentByLabel(label, componentsRightSide)) != null) { return c; }
+		if ((c = getComponentByLabel(label, componentsOutlineTopSide)) != null) { return c; }
+		if ((c = getComponentByLabel(label, componentsOutlineLeftSide)) != null) { return c; }
+		if ((c = getComponentByLabel(label, componentsOutlineRightSide)) != null) { return c; }
+		return null;
+	}
+	
 	public SwitchBoard init() {
 		
 		sides.add(Side.LEFT);
 		sides.add(Side.RIGHT);
 		sides.add(Side.TOP);
 		sides.add(Side.OUTLINE_TOP);
-		sides.add(Side.OUTLINE_LEFT);
-		sides.add(Side.OUTLINE_RIGHT);
+//		sides.add(Side.OUTLINE_LEFT);
+//		sides.add(Side.OUTLINE_RIGHT);
 		
 		createBoard();
 		createLayout();

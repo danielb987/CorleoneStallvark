@@ -9,6 +9,10 @@ import java.awt.geom.Ellipse2D;
  */
 public class SingleLED extends Component {
 
+	public static boolean printLED = true;
+	
+	public boolean isLit = true;
+	
 	public SingleLED(int column, int row, Orientation orientation, Label label) {
 		super(column, row, orientation, label);
 	}
@@ -83,9 +87,25 @@ public class SingleLED extends Component {
 	}
 	
 	private void printSymbol(Graphics2D graphics) {
+		
+		// Don't print symbol if we want to print the led color and it's not lit
+//		if (printLED && !isLit) {
+//			return;
+//		}
+		
 		final double SPC = Component.SPACING;
 //		graphics.setColor(Color.RED);
-		graphics.setColor(Color.GREEN);
+		
+		if (printLED) {
+			if (isLit) {
+//				graphics.setColor(Color.GREEN);
+				graphics.setColor(Color.YELLOW);
+			} else {
+				graphics.setColor(Color.LIGHT_GRAY);
+			}
+		} else {
+			graphics.setColor(Color.GREEN);
+		}
 		
 		switch (_orientation) {
 			case HORIZONTAL:

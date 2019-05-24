@@ -2,6 +2,7 @@ package gui;
 
 import electric.DrawingSettings;
 import electric.DrawingStyle;
+import electric.SingleLED;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -53,10 +54,35 @@ public final class MainPanel extends JPanel implements KeyListener, MouseListene
 		
 //		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CENTER, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_SYMBOL, true);
-		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CONNECTORS, true);
+//		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_CONNECTORS, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_OUTLINE, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_LABEL, true);
 		DrawingSettings.enableDrawingStyle(DrawingStyle.PRINT_TEXT, true);
+		
+		((SingleLED)switchBoard.getComponentByLabel("D2")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D8")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D10")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D102")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D104")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D18")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D19")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D21")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D28")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D23")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D25")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D202")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D5")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D51")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D55")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D60")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D62")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D58")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D54")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D204")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D206")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D207")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D209")).isLit = false;
+		((SingleLED)switchBoard.getComponentByLabel("D211")).isLit = false;
 		
 		addKeyListener(this);
 		addMouseListener(this);
