@@ -465,11 +465,13 @@ public final class SwitchBoard {
 		int CY = 14;	// Y position of main track
 		
 		
-		componentsLeftSide.add(new Button(18, CY-10, EAST, new Label("S@1",0,-2)));
+		componentsLeftSide.add(new SingleLED(19, CY-10, EAST, new Label("D@1",0,-2), LED_Color.GREEN));
+		componentsLeftSide.add(new Button(16, CY-10, EAST, new Label("S@1",0,-2)));
 		componentsTopSide.add(new Text(10, CY-10, Orientation.EAST, new Label("Bryt tågväg",0,0,180,4,true, false)));
-		componentsLeftSide.add(new Button(40, CY+20, EAST, new Label("S@2",0,-2)));
-		componentsTopSide.add(new Text(50, CY+20, Orientation.EAST, new Label("Bryt tågväg",0,0,4,true, false)));
-		componentsTopSide.add(new Text(50, CY+20, Orientation.EAST, new Label("Bryt tågväg",0,0,4,true, false)));
+		
+		componentsLeftSide.add(new SingleLED(61, CY+20, EAST, new Label("D@2",0,-2), LED_Color.YELLOW));
+		componentsLeftSide.add(new Button(64, CY+20, EAST, new Label("S@2",0,-2)));
+		componentsTopSide.add(new Text(70, CY+20, Orientation.EAST, new Label("Bryt tågväg",0,0,4,true, false)));
 		
 		// Main track
 //		components.add(new Line(0, CY, 106, CY, 1, Color.BLACK));
@@ -487,7 +489,7 @@ public final class SwitchBoard {
 		
 		// Crossover at the left
 		componentsTopSide.add(new Line(8, CY, 12, CY + 4, 3/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSide.add(new SingleLED(6, CY, EAST, new Label("D1",0,-2), LED_Color.RED));
+		componentsLeftSide.add(new SingleLED(6, CY, EAST, new Label("D1",0,-2), LED_Color.GREEN_YELLOW));
 //		componentsLeftSide.add(new SingleLED(6, CY+2, EAST, new Label("D2",0,-2)));
 //		componentsLeftSide.add(new SingleLED(5, CY+4, EAST, new Label("D3",0,-2)));
 		componentsLeftSide.add(new Button(3, CY, EAST, new Label("S1",0,-2)));
@@ -501,7 +503,7 @@ public final class SwitchBoard {
 		
 		// Crossover little left to the right
 		componentsTopSide.add(new Line(70, CY, 66, CY + 4, 3/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSide.add(new SingleLED(88, CY+3, NORTH, new Label("D201",0,-2), LED_Color.RED));
+		componentsLeftSide.add(new SingleLED(88, CY+3, NORTH, new Label("D201",0,-2), LED_Color.GREEN_YELLOW));
 //		componentsLeftSide.add(new SingleLED(68, CY+2, EAST, new Label("D202",0,-2), LED_Color.RED));
 //		componentsLeftSide.add(new SingleLED(69, CY+4, EAST, new Label("D203",0,-2), LED_Color.RED));
 //		components.add(new Button(25, CY, EAST, new Label("S2+",0,-2)));
@@ -509,8 +511,8 @@ public final class SwitchBoard {
 		
 		// Crossover at the right
 		componentsTopSide.add(new Line(74, CY, 78, CY + 4, 3/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSide.add(new SingleLED(82, CY, EAST, new Label("D204",0,-2), LED_Color.RED));
-		componentsLeftSide.add(new SingleLED(80, CY+5, EAST, new Label("D206",0,-2), LED_Color.RED));
+		componentsLeftSide.add(new SingleLED(82, CY, EAST, new Label("D204",0,-2), LED_Color.GREEN_YELLOW));
+		componentsLeftSide.add(new SingleLED(80, CY+5, EAST, new Label("D206",0,-2), LED_Color.GREEN_YELLOW));
 //		components.add(new Button(4, CY, EAST, new Label("S1+",0,-2)));
 		componentsLeftSide.add(new Button(79, CY, EAST, new Label("S202",0,-2)));
 		componentsLeftSide.add(new Button(82, CY + 7, EAST, new Label("S52",0,-2)));
@@ -529,16 +531,16 @@ public final class SwitchBoard {
 		
 		// Crossover vertical 2
 		componentsTopSide.add(new Line(88, CY+17-4, 84, CY+21-4, 0, 3/2f, 0.5, Color.BLACK));
-		componentsLeftSide.add(new SingleLED(88, CY+19, NORTH, new Label("D210",3,0), LED_Color.RED));
+		componentsLeftSide.add(new SingleLED(88, CY+19, NORTH, new Label("D210",3,0), LED_Color.GREEN_YELLOW));
 //		componentsLeftSide.add(new SingleLED(86, CY+19, NORTH, new Label("D211",0,-3), LED_Color.RED));
-		componentsLeftSide.add(new SingleLED(84, CY+19, NORTH, new Label("D212",-3,0), LED_Color.RED));
+		componentsLeftSide.add(new SingleLED(84, CY+19, NORTH, new Label("D212",-3,0), LED_Color.GREEN_YELLOW));
 //		components.add(new Button(4, CY, EAST, new Label("S1+",0,-2)));
 		componentsLeftSide.add(new Button(88, CY+22, NORTH, new Label("S204",3,0)));
 		
 		// Siding for storage of passenger cars
 		componentsTopSide.add(new Line(10, CY, 13, CY - 3, SPACING/2f, 0, 0.5, Color.BLACK));
 		componentsTopSide.add(new Line(13, CY - 3, 28, CY - 3, SPACING/2f, 0, 0.5, Color.BLACK));
-		componentsLeftSide.add(new SingleLED(8, CY+4, EAST, new Label("D7",0,-2), LED_Color.YELLOW));
+		componentsLeftSide.add(new SingleLED(8, CY+4, EAST, new Label("D7",0,-2), LED_Color.GREEN_YELLOW));
 //		componentsLeftSide.add(new SingleLED(12, CY-2, EAST, new Label("D8",0,-2)));
 		componentsLeftSide.add(new Button(5, CY+4, EAST, new Label("S3",0,-2)));
 		componentsTopSide.add(new Line(28, CY - 3, 31, CY, SPACING/2f, 0, 0.5, Color.BLACK));
@@ -703,7 +705,7 @@ public final class SwitchBoard {
 			// Siding for cabooses
 			componentsTopSide.add(new Line(18, CY + 4, 21, CY + 7, SPACING/2f, 0, 0.5, Color.BLACK));
 			componentsTopSide.add(new Line(21, CY + 7, 28, CY + 7, SPACING/2f, 0, 0.5, Color.BLACK));
-			componentsLeftSide.add(new SingleLED(17, CY + 4, EAST, new Label("D101",0,-2), LED_Color.YELLOW));
+			componentsLeftSide.add(new SingleLED(17, CY + 4, EAST, new Label("D101",0,-2), LED_Color.GREEN_YELLOW));
 //			componentsLeftSide.add(new SingleLED(18, CY + 4 + 2, EAST, new Label("D102",0,-2)));
 			componentsLeftSide.add(new Button(14, CY + 4, EAST, new Label("S101",0,-2)));
 			componentsTopSide.add(new Line(31, CY + 4, 28, CY + 7, SPACING/2f, 0, 0.5, Color.BLACK));

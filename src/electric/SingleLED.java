@@ -2,7 +2,9 @@ package electric;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.GeneralPath;
 
 /**
  * Button
@@ -13,6 +15,7 @@ public class SingleLED extends Component {
 		RED,
 		GREEN,
 		YELLOW,
+		GREEN_YELLOW,
 		BLUE,
 	}
 	
@@ -99,44 +102,62 @@ public class SingleLED extends Component {
 		}
 	}
 	
+	private void printCircle(Graphics2D graphics, double x, double y, Color c1, Color c2) {
+		graphics.setColor(c1);
+		graphics.fill(new Ellipse2D.Double(x, y, 3, 3));
+		
+		if (c2 != null) {
+			Shape clip = graphics.getClip();
+			GeneralPath gp = new GeneralPath();
+			gp.moveTo(x, y);
+			gp.lineTo(x, y+3);
+			gp.lineTo(x+3, y);
+			gp.closePath();
+//			gp.lineTo(x, y);
+			graphics.setClip(gp);
+			graphics.setColor(c2);
+			graphics.fill(new Ellipse2D.Double(x, y, 3, 3));
+			graphics.setClip(clip);
+		}
+	}
+	
 	private void printSymbol(Graphics2D graphics) {
 		
-		// Don't print symbol if we want to print the led color and it's not lit
-//		if (printLED && !isLit) {
-//			return;
-//		}
+		Color c1;
+		Color c2 = null;
 		
 		final double SPC = Component.SPACING;
-//		graphics.setColor(Color.RED);
 		
 		if (printLED) {
 			if (isLit) {
-//				graphics.setColor(Color.GREEN);
 				graphics.setColor(Color.YELLOW);
 				
 				switch (_ledColor) {
-					case RED: graphics.setColor(new Color(255,63,63)); break;
-					case GREEN: graphics.setColor(Color.GREEN); break;
-					case YELLOW: graphics.setColor(Color.YELLOW); break;
-					case BLUE: graphics.setColor(Color.BLUE); break;
+					case RED: c1 = new Color(255,63,63); break;
+					case GREEN_YELLOW: c1 = Color.GREEN; c2 = Color.YELLOW; break;
+					case GREEN: c1 = Color.GREEN; break;
+					case YELLOW: c1 = Color.YELLOW; break;
+					case BLUE: c1 = Color.BLUE; break;
 					default: throw new RuntimeException("ledColor has invalid value: "+_ledColor.name());
 				}
 			} else {
-				graphics.setColor(Color.LIGHT_GRAY);
+				c1 = Color.LIGHT_GRAY;
 			}
 		} else {
-			graphics.setColor(Color.GREEN);
+			c1 = Color.GREEN;
 		}
 		
 		switch (_orientation) {
 			case HORIZONTAL:
 			case EAST:
-				graphics.fill(new Ellipse2D.Double(_x + SPC/2 - 3f/2, _y - 3f/2, 3, 3));
+				printCircle(graphics, _x + SPC/2 - 3f/2, _y - 3f/2, c1, c2);
+//				graphics.fill(new Ellipse2D.Double(_x + SPC/2 - 3f/2, _y - 3f/2, 3, 3));
 				break;
 				
 			case VERTICAL:
 			case NORTH:
-				graphics.fill(new Ellipse2D.Double(_x - 3f/2, _y + SPC/2 - 3f/2, 3, 3));
+				printCircle(graphics, _x - 3f/2, _y + SPC/2 - 3f/2, c1, c2);
+//				graphics.fill(new Ellipse2D.Double(_x - 3f/2, _y + SPC/2 - 3f/2, 3, 3));
 				break;
 				
 			case WEST:
