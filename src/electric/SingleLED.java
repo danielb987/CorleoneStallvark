@@ -9,12 +9,25 @@ import java.awt.geom.Ellipse2D;
  */
 public class SingleLED extends Component {
 
+	public enum LED_Color {
+		RED,
+		GREEN,
+		YELLOW,
+		BLUE,
+	}
+	
 	public static boolean printLED = true;
 	
 	public boolean isLit = true;
+	private LED_Color _ledColor = LED_Color.BLUE;
 	
 	public SingleLED(int column, int row, Orientation orientation, Label label) {
 		super(column, row, orientation, label);
+	}
+	
+	public SingleLED(int column, int row, Orientation orientation, Label label, LED_Color ledColor) {
+		super(column, row, orientation, label);
+		this._ledColor = ledColor;
 	}
 	
 	@Override
@@ -100,6 +113,14 @@ public class SingleLED extends Component {
 			if (isLit) {
 //				graphics.setColor(Color.GREEN);
 				graphics.setColor(Color.YELLOW);
+				
+				switch (_ledColor) {
+					case RED: graphics.setColor(new Color(255,63,63)); break;
+					case GREEN: graphics.setColor(Color.GREEN); break;
+					case YELLOW: graphics.setColor(Color.YELLOW); break;
+					case BLUE: graphics.setColor(Color.BLUE); break;
+					default: throw new RuntimeException("ledColor has invalid value: "+_ledColor.name());
+				}
 			} else {
 				graphics.setColor(Color.LIGHT_GRAY);
 			}

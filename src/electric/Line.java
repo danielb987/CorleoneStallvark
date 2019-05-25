@@ -41,7 +41,7 @@ public class Line extends Component {
 		_lineStyle = lineStyle;
 	}
 	
-	public Line(int column1, int row1, int column2, int row2, double thickness, Color color) {
+	public Line(double column1, double row1, double column2, double row2, double thickness, Color color) {
 		super(column1, row1, null, null);
 		_x2 = column2 * SPACING;
 		_y2 = row2 * SPACING;
