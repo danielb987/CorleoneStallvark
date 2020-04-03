@@ -6,6 +6,7 @@ import electric.Component;
 import static electric.Component.SPACING;
 import electric.DrawingSettings;
 import electric.DrawingStyle;
+import electric.Hole;
 import electric.Label;
 import electric.Line;
 import electric.Orientation;
@@ -27,6 +28,7 @@ import java.util.Set;
 public final class SwitchBoard {
 
 	public enum Side {
+		ALL,
 		GRID,
 		LEFT,
 		RIGHT,
@@ -44,6 +46,7 @@ public final class SwitchBoard {
 	private boolean drawGrid = true;
 	
 	private final List<Component> componentsGrid = new ArrayList<>();
+	private final List<Component> componentsAllSides = new ArrayList<>();
 	private final List<Component> componentsTopSide = new ArrayList<>();
 	private final List<Component> componentsLeftSide = new ArrayList<>();
 	private final List<Component> componentsLeftSideSmallSidings = new ArrayList<>();
@@ -59,6 +62,7 @@ public final class SwitchBoard {
 	int numCircles = 0;
 	int numLabels = 0;
 	int numTexts = 0;
+	int numHoles = 0;
 	int numPins = 0;
 	
 	public void countComponents(List<Component> components) {
@@ -68,6 +72,7 @@ public final class SwitchBoard {
 			else if (c instanceof Line) numLines++;
 			else if (c instanceof Circle) numCircles++;
 			else if (c instanceof Text) numTexts++;
+			else if (c instanceof Hole) numHoles++;
 			else throw new RuntimeException("Unknown component: "+c.getClass().getName());
 			
 			if (! (c instanceof Text) && (c.getLabel() != null)) numLabels++;
@@ -103,6 +108,10 @@ public final class SwitchBoard {
 	
 	public SwitchBoard init() {
 		
+//		OBS!!! Multi-color LED ska ha tre ben. Fixa även exporten.
+		
+		sides.add(Side.ALL);
+		
 		sides.add(Side.LEFT);
 		sides.add(Side.RIGHT);
 		sides.add(Side.TOP);
@@ -111,8 +120,8 @@ public final class SwitchBoard {
 //		sides.add(Side.OUTLINE_RIGHT);
 		
 		createBoard();
-//		createLayout_1();
-		createLayout_2();
+		createLayout_1();
+//		createLayout_2();
 		
 		countComponents(componentsTopSide);
 		countComponents(componentsLeftSide);
@@ -166,6 +175,9 @@ public final class SwitchBoard {
 	
 	public void createLayout_1() {
 		int CY = 14;	// Y position of main track
+		
+		// Holes
+		componentsAllSides.add(new Hole(3, 3, 3, new Label("Hole1",0,-2)));
 		
 		// Main track
 //		components.add(new Line(0, CY, 106, CY, 1, Color.BLACK));
@@ -779,6 +791,11 @@ public final class SwitchBoard {
 	{
 		if (sides.contains(Side.GRID)) {
 			for (Component component : componentsGrid) {
+				component.draw(graphics);
+			}
+		}
+		if (sides.contains(Side.ALL)) {
+			for (Component component : componentsAllSides) {
 				component.draw(graphics);
 			}
 		}

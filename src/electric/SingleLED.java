@@ -22,7 +22,8 @@ public class SingleLED extends Component {
 	public static boolean printLED = true;
 	
 	public boolean isLit = true;
-	private LED_Color _ledColor = LED_Color.BLUE;
+//	private LED_Color _ledColor = LED_Color.BLUE;
+	private LED_Color _ledColor = LED_Color.YELLOW;
 	
 	public SingleLED(int column, int row, Orientation orientation, Label label) {
 		super(column, row, orientation, label);
